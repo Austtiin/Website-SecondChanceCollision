@@ -164,7 +164,7 @@ export default function Header() {
       <div className="absolute inset-x-0 bottom-0 h-0.5 bg-gradient-to-r from-transparent via-[var(--accent-red)] to-transparent" />
       <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-4">
         <Link href="/" className="flex items-center gap-4">
-          <div className="relative h-20 w-40 overflow-hidden">
+          <div className="relative h-16 w-32 sm:h-20 sm:w-40 md:h-24 md:w-48 overflow-hidden">
             <Image
               src="/SCC.png"
               alt="Second Chance Collision logo"

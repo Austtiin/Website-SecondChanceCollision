@@ -34,19 +34,35 @@ export default function RootLayout({
       >
         <React.StrictMode>
           <div className="relative min-h-screen flex flex-col overflow-hidden bg-gradient-to-br from-neutral-50 via-white to-neutral-100 text-[var(--foreground)]">
+            {/* Modern grid pattern background */}
+            <div className="pointer-events-none fixed inset-0 opacity-[0.03]">
+              <div className="absolute inset-0" style={{
+                backgroundImage: 'linear-gradient(to right, #e6141f 1px, transparent 1px), linear-gradient(to bottom, #e6141f 1px, transparent 1px)',
+                backgroundSize: '80px 80px'
+              }} />
+            </div>
+            
             {/* Decorative background shapes */}
             <div className="pointer-events-none fixed inset-0 overflow-hidden">
-              <div className="absolute -left-40 top-0 h-80 w-80 rounded-full bg-[var(--accent-red)]/[0.03] blur-3xl" />
-              <div className="absolute right-0 top-40 h-96 w-96 rounded-full bg-[var(--accent-dark)]/[0.02] blur-3xl" />
-              <div className="absolute bottom-0 left-1/4 h-72 w-72 rounded-full bg-[var(--accent-red)]/[0.04] blur-3xl" />
-              <div className="absolute right-1/3 top-1/3 h-64 w-64 rounded-full bg-neutral-200/30 blur-2xl" />
+              <div className="absolute -left-40 top-0 h-80 w-80 rounded-full bg-[var(--accent-red)]/[0.05] blur-3xl" />
+              <div className="absolute right-0 top-40 h-96 w-96 rounded-full bg-[var(--accent-dark)]/[0.03] blur-3xl" />
+              <div className="absolute bottom-0 left-1/4 h-72 w-72 rounded-full bg-[var(--accent-red)]/[0.06] blur-3xl" />
+              <div className="absolute right-1/3 top-1/3 h-64 w-64 rounded-full bg-neutral-200/50 blur-2xl" />
+              <div className="absolute top-1/2 left-1/2 h-96 w-96 -translate-x-1/2 -translate-y-1/2 rounded-full bg-[var(--accent-red)]/[0.02] blur-3xl" />
             </div>
             
             {/* Diagonal accent stripes */}
-            <div className="pointer-events-none fixed inset-0 opacity-[0.015]">
-              <div className="absolute -right-32 top-0 h-full w-1 rotate-12 bg-[var(--accent-red)]" />
-              <div className="absolute right-1/4 top-0 h-full w-0.5 rotate-12 bg-[var(--accent-dark)]" />
-              <div className="absolute left-1/3 top-0 h-full w-1 -rotate-12 bg-[var(--accent-red)]" />
+            <div className="pointer-events-none fixed inset-0 opacity-[0.02]">
+              <div className="absolute -right-32 top-0 h-full w-1 rotate-12 bg-gradient-to-b from-[var(--accent-red)] to-transparent" />
+              <div className="absolute right-1/4 top-0 h-full w-0.5 rotate-12 bg-gradient-to-b from-[var(--accent-dark)] to-transparent" />
+              <div className="absolute left-1/3 top-0 h-full w-1 -rotate-12 bg-gradient-to-b from-[var(--accent-red)] to-transparent" />
+              <div className="absolute left-1/2 top-0 h-full w-2 rotate-6 bg-gradient-to-b from-neutral-300 to-transparent" />
+            </div>
+            
+            {/* Corner decorative elements */}
+            <div className="pointer-events-none fixed inset-0 opacity-[0.04]">
+              <div className="absolute top-0 left-0 h-64 w-64 border-t-2 border-l-2 border-[var(--accent-red)] rounded-tl-3xl" />
+              <div className="absolute bottom-0 right-0 h-64 w-64 border-b-2 border-r-2 border-[var(--accent-red)] rounded-br-3xl" />
             </div>
             
           <Header />
@@ -62,7 +78,7 @@ export default function RootLayout({
                 {/* Logo and tagline */}
                 <div className="space-y-4 lg:col-span-2">
                   <div className="flex items-center gap-3">
-                    <div className="relative h-20 w-40">
+                    <div className="relative h-20 w-40 sm:h-28 sm:w-56 md:h-32 md:w-64">
                       <Image
                         src="/SCC.png"
                         alt="Second Chance Collision logo"
