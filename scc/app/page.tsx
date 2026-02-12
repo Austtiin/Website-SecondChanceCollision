@@ -6,7 +6,7 @@ export default function Home() {
   return (
     <div className="space-y-12">
       {/* Modern Hero Section */}
-      <section className="relative overflow-hidden rounded-3xl shadow-2xl">
+      <section className="relative overflow-hidden rounded-3xl shadow-2xl min-h-[75vh] sm:min-h-[80vh] flex flex-col">
         {/* Background Image with Overlay */}
         <div className="absolute inset-0">
           <Image
@@ -37,8 +37,8 @@ export default function Home() {
           <div className="absolute bottom-0 right-0 h-32 w-32 border-b-2 border-r-2 border-[var(--accent-red)]/30 rounded-br-3xl" />
         </div>
         
-        <div className="relative py-12 px-4 sm:py-20 sm:px-8 lg:px-12">
-          <div className="max-w-4xl mx-auto text-center space-y-6 sm:space-y-10">
+        <div className="relative flex-1 flex items-center py-10 px-5 sm:py-10 sm:px-8 lg:px-12">
+          <div className="max-w-4xl mx-auto text-center space-y-6 sm:space-y-7 w-full">
             {/* Badge */}
             <div className="inline-flex items-center gap-2 rounded-full bg-[var(--accent-red)]/20 px-4 py-2 ring-1 ring-[var(--accent-red)]/30">
               <div className="h-2 w-2 animate-pulse rounded-full bg-[var(--accent-red)]" />
@@ -48,8 +48,8 @@ export default function Home() {
             </div>
             
             {/* Hero Title */}
-            <div className="space-y-4 sm:space-y-6">
-              <h1 className="text-3xl font-bold leading-tight tracking-tight text-white sm:text-5xl lg:text-7xl">
+            <div className="space-y-4 sm:space-y-5">
+              <h1 className="text-3xl font-bold leading-tight tracking-tight text-white sm:text-5xl lg:text-6xl">
                 Expert Collision Repair &<br />Auto Body Services
               </h1>
               <p className="text-base sm:text-xl leading-relaxed text-neutral-300 max-w-2xl mx-auto">
@@ -79,17 +79,8 @@ export default function Home() {
               </a>
             </div>
             
-            {/* Quick Info Grid - Pyramid on mobile */}
-            <div className="grid gap-4 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 pt-8 max-w-3xl mx-auto">
-              <div className="text-center space-y-2 sm:col-span-2 lg:col-span-1 mx-auto max-w-xs sm:max-w-none">
-                <div className="inline-flex items-center justify-center h-12 w-12 rounded-full bg-[var(--accent-red)]/20 ring-1 ring-[var(--accent-red)]/30 mx-auto">
-                  <svg className="h-6 w-6 text-[var(--accent-red)]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-                  </svg>
-                </div>
-                <p className="text-sm font-semibold text-white">Open 6 Days a Week</p>
-                <p className="text-xs text-neutral-400">Mon-Sat for your convenience</p>
-              </div>
+            {/* Quick Info Grid - Pyramid on mobile: 2 cards top, 1 bottom */}
+            <div className="grid gap-4 grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 pt-5 sm:pt-5 max-w-3xl mx-auto">
               <div className="text-center space-y-2 mx-auto max-w-xs sm:max-w-none">
                 <div className="inline-flex items-center justify-center h-12 w-12 rounded-full bg-[var(--accent-red)]/20 ring-1 ring-[var(--accent-red)]/30 mx-auto">
                   <svg className="h-6 w-6 text-[var(--accent-red)]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -102,6 +93,15 @@ export default function Home() {
               <div className="text-center space-y-2 mx-auto max-w-xs sm:max-w-none">
                 <div className="inline-flex items-center justify-center h-12 w-12 rounded-full bg-[var(--accent-red)]/20 ring-1 ring-[var(--accent-red)]/30 mx-auto">
                   <svg className="h-6 w-6 text-[var(--accent-red)]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                  </svg>
+                </div>
+                <p className="text-sm font-semibold text-white">Open 6 Days a Week</p>
+                <p className="text-xs text-neutral-400">Mon-Sat for your convenience</p>
+              </div>
+              <div className="text-center space-y-2 mx-auto max-w-xs sm:max-w-none col-span-2 sm:col-span-1">
+                <div className="inline-flex items-center justify-center h-12 w-12 rounded-full bg-[var(--accent-red)]/20 ring-1 ring-[var(--accent-red)]/30 mx-auto">
+                  <svg className="h-6 w-6 text-[var(--accent-red)]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
                   </svg>
                 </div>
@@ -109,6 +109,18 @@ export default function Home() {
                 <p className="text-xs text-neutral-400">Easy access from I-35W</p>
               </div>
             </div>
+          </div>
+        </div>
+        
+        {/* Scroll Indicator */}
+        <div className="relative pb-6 sm:pb-6 z-20">
+          <div className="flex flex-col items-center gap-2 sm:gap-2 animate-bounce">
+            <span className="text-xs font-semibold text-white/80 uppercase tracking-wider">
+              Scroll for more
+            </span>
+            <svg className="h-6 w-6 text-white/80" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+            </svg>
           </div>
         </div>
       </section>
