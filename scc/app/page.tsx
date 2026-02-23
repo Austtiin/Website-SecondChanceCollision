@@ -1,24 +1,32 @@
 import Image from "next/image";
-import Link from "next/link";
 import AnimatedGallery from "./components/AnimatedGallery";
+import OurWork from "./components/OurWork";
+import OurProcess from "./components/OurProcess";
+import ScrollButton from "./components/ScrollButton";
+import ScrollReveal from "./components/ScrollReveal";
+import { EmailLink } from "./components/EmailConfirmationModal";
+import { getRandomProjects } from "./lib/getProjects";
 
 export default function Home() {
+  // Get 3 random projects on each page load
+  const projects = getRandomProjects(3);
+
   return (
     <div className="space-y-12">
       {/* Modern Hero Section */}
-      <section className="relative overflow-hidden rounded-3xl shadow-2xl min-h-[75vh] sm:min-h-[80vh] flex flex-col">
+      <section className="relative overflow-hidden rounded-3xl shadow-2xl h-[600px] sm:h-[650px] lg:h-[700px] flex flex-col">
         {/* Background Image with Overlay */}
         <div className="absolute inset-0">
           <Image
-            src="/painter.jpg"
+            src="/Gallery/IMG_20260222_165739.jpg"
             alt="Professional auto body work"
             fill
             className="object-cover"
             priority
           />
-          {/* Multi-layered overlay for depth */}
-          <div className="absolute inset-0 bg-gradient-to-br from-[#12171b]/95 via-[#12171b]/90 to-[#0a0d10]/95" />
-          <div className="absolute inset-0 bg-gradient-to-t from-[#12171b] via-transparent to-transparent" />
+          {/* Multi-layered overlay for depth - lighter overlay */}
+          <div className="absolute inset-0 bg-gradient-to-br from-[#12171b]/70 via-[#12171b]/60 to-[#0a0d10]/70" />
+          <div className="absolute inset-0 bg-gradient-to-t from-[#12171b]/80 via-transparent to-transparent" />
         </div>
         
         {/* Decorative Elements - Geometric Shapes */}
@@ -37,10 +45,10 @@ export default function Home() {
           <div className="absolute bottom-0 right-0 h-32 w-32 border-b-2 border-r-2 border-[var(--accent-red)]/30 rounded-br-3xl" />
         </div>
         
-        <div className="relative flex-1 flex items-center py-10 px-5 sm:py-10 sm:px-8 lg:px-12">
-          <div className="max-w-4xl mx-auto text-center space-y-6 sm:space-y-7 w-full">
+        <div className="relative flex-1 flex items-center justify-center py-6 sm:py-8 px-4 sm:px-8 lg:px-12 animate-in fade-in duration-500">
+          <div className="max-w-4xl mx-auto text-center space-y-3 sm:space-y-4 w-full">
             {/* Badge */}
-            <div className="inline-flex items-center gap-2 rounded-full bg-[var(--accent-red)]/20 px-4 py-2 ring-1 ring-[var(--accent-red)]/30">
+            <div className="inline-flex items-center gap-2 rounded-full bg-[var(--accent-red)]/20 px-4 py-2 ring-1 ring-[var(--accent-red)]/30 animate-in slide-in-from-top-4 duration-500 delay-100">
               <div className="h-2 w-2 animate-pulse rounded-full bg-[var(--accent-red)]" />
               <span className="text-[10px] sm:text-xs font-bold uppercase tracking-wider text-red-300">
                 Circle Pines, MN • Serving North Metro
@@ -48,60 +56,60 @@ export default function Home() {
             </div>
             
             {/* Hero Title */}
-            <div className="space-y-4 sm:space-y-5">
-              <h1 className="text-3xl font-bold leading-tight tracking-tight text-white sm:text-5xl lg:text-6xl">
+            <div className="space-y-2 sm:space-y-3 animate-in slide-in-from-bottom-4 duration-500 delay-150">
+              <h1 className="text-2xl font-bold leading-tight tracking-tight text-white sm:text-3xl lg:text-5xl">
                 Expert Collision Repair &<br />Auto Body Services
               </h1>
-              <p className="text-base sm:text-xl leading-relaxed text-neutral-300 max-w-2xl mx-auto">
+              <p className="hidden sm:block text-xs sm:text-base lg:text-lg leading-relaxed text-neutral-300 max-w-2xl mx-auto">
                 Quality workmanship, fair pricing, and exceptional service. From minor dents to major collision damage, we restore your vehicle with precision and care.
               </p>
             </div>
             
             {/* CTA Buttons */}
-            <div className="flex flex-wrap items-center justify-center gap-3 sm:gap-4">
+            <div className="flex flex-wrap items-center justify-center gap-2 sm:gap-3 animate-in fade-in duration-500 delay-200">
               <a
                 href="tel:0000000000"
-                className="inline-flex items-center justify-center gap-2 rounded-full bg-[var(--accent-red)] px-6 py-3 sm:px-8 sm:py-4 text-sm sm:text-base font-bold text-white shadow-xl transition hover:bg-red-700 hover:scale-105"
+                className="inline-flex items-center justify-center gap-2 rounded-full bg-[var(--accent-red)] px-6 py-3 sm:px-6 sm:py-3 text-sm sm:text-sm font-bold text-white shadow-xl transition hover:bg-red-700 hover:scale-105 cursor-pointer"
               >
-                <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <svg className="h-5 w-5 sm:h-4 sm:w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
                 </svg>
                 Get Free Estimate
               </a>
-              <a
-                href="mailto:info@secondchancecollision.com?subject=Appointment Request"
-                className="inline-flex items-center justify-center gap-2 rounded-full border-2 border-white bg-white px-6 py-3 sm:px-8 sm:py-4 text-sm sm:text-base font-bold text-[#12171b] shadow-xl transition hover:bg-neutral-100 hover:scale-105"
+              <EmailLink
+                subject="Appointment Request"
+                className="inline-flex items-center justify-center gap-2 rounded-full border-2 border-white bg-white px-6 py-3 sm:px-6 sm:py-3 text-sm sm:text-sm font-bold text-[#12171b] shadow-xl transition hover:bg-neutral-100 hover:scale-105 cursor-pointer"
               >
-                <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <svg className="h-5 w-5 sm:h-4 sm:w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
                 </svg>
                 Book Appointment
-              </a>
+              </EmailLink>
             </div>
             
             {/* Quick Info Grid - Pyramid on mobile: 2 cards top, 1 bottom */}
-            <div className="grid gap-4 grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 pt-5 sm:pt-5 max-w-3xl mx-auto">
-              <div className="text-center space-y-2 mx-auto max-w-xs sm:max-w-none">
-                <div className="inline-flex items-center justify-center h-12 w-12 rounded-full bg-[var(--accent-red)]/20 ring-1 ring-[var(--accent-red)]/30 mx-auto">
-                  <svg className="h-6 w-6 text-[var(--accent-red)]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+            <div className="grid gap-4 grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 pt-4 sm:pt-5 max-w-3xl mx-auto">
+              <div className="text-center space-y-2 mx-auto max-w-xs sm:max-w-none animate-in fade-in duration-400 delay-250">
+                <div className="inline-flex items-center justify-center h-14 w-14 rounded-full bg-[var(--accent-red)]/20 ring-1 ring-[var(--accent-red)]/30 mx-auto">
+                  <svg className="h-7 w-7 text-[var(--accent-red)]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
                   </svg>
                 </div>
-                <p className="text-sm font-semibold text-white">Insurance Assistance</p>
-                <p className="text-xs text-neutral-400">We work with all providers</p>
+                <p className="text-sm font-semibold text-white">Certified Technicians</p>
+                <p className="text-xs text-neutral-400">Expert craftsmanship</p>
               </div>
-              <div className="text-center space-y-2 mx-auto max-w-xs sm:max-w-none">
-                <div className="inline-flex items-center justify-center h-12 w-12 rounded-full bg-[var(--accent-red)]/20 ring-1 ring-[var(--accent-red)]/30 mx-auto">
-                  <svg className="h-6 w-6 text-[var(--accent-red)]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <div className="text-center space-y-2 mx-auto max-w-xs sm:max-w-none animate-in fade-in duration-400 delay-300">
+                <div className="inline-flex items-center justify-center h-14 w-14 rounded-full bg-[var(--accent-red)]/20 ring-1 ring-[var(--accent-red)]/30 mx-auto">
+                  <svg className="h-7 w-7 text-[var(--accent-red)]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
                   </svg>
                 </div>
                 <p className="text-sm font-semibold text-white">Open 6 Days a Week</p>
                 <p className="text-xs text-neutral-400">Mon-Sat for your convenience</p>
               </div>
-              <div className="text-center space-y-2 mx-auto max-w-xs sm:max-w-none col-span-2 sm:col-span-1">
-                <div className="inline-flex items-center justify-center h-12 w-12 rounded-full bg-[var(--accent-red)]/20 ring-1 ring-[var(--accent-red)]/30 mx-auto">
-                  <svg className="h-6 w-6 text-[var(--accent-red)]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <div className="text-center space-y-2 mx-auto max-w-xs sm:max-w-none col-span-2 sm:col-span-1 animate-in fade-in duration-400 delay-350">
+                <div className="inline-flex items-center justify-center h-14 w-14 rounded-full bg-[var(--accent-red)]/20 ring-1 ring-[var(--accent-red)]/30 mx-auto">
+                  <svg className="h-7 w-7 text-[var(--accent-red)]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
                   </svg>
                 </div>
@@ -113,15 +121,8 @@ export default function Home() {
         </div>
         
         {/* Scroll Indicator */}
-        <div className="relative pb-6 sm:pb-6 z-20">
-          <div className="flex flex-col items-center gap-2 sm:gap-2 animate-bounce">
-            <span className="text-xs font-semibold text-white/80 uppercase tracking-wider">
-              Scroll for more
-            </span>
-            <svg className="h-6 w-6 text-white/80" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
-            </svg>
-          </div>
+        <div className="relative pb-3 sm:pb-4 z-20 flex justify-center">
+          <ScrollButton targetId="services-section" />
         </div>
       </section>
       
@@ -131,7 +132,8 @@ export default function Home() {
       </div>
 
       {/* Services overview - redesigned with black/red theme */}
-      <section className="relative space-y-8">
+      <ScrollReveal>
+      <section id="services-section" className="relative space-y-8 scroll-mt-20">
         <div className="text-center space-y-3">
           <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[var(--accent-red)]">
             Complete auto care
@@ -259,11 +261,70 @@ export default function Home() {
           </div>
         </div>
       </section>
+      </ScrollReveal>
+
+      {/* Our Process Section */}
+      <ScrollReveal delay={100}>
+      <OurProcess />
+      </ScrollReveal>
 
       {/* Animated Gallery Showcase */}
+      <ScrollReveal delay={150}>
       <AnimatedGallery />
+      </ScrollReveal>
+
+      {/* Our Work Section */}
+      <ScrollReveal delay={200}>
+      <OurWork projects={projects} />
+      </ScrollReveal>
+
+      {/* Insurance Assistance Section */}
+      <ScrollReveal delay={250}>
+      <section className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-neutral-900 via-neutral-800 to-neutral-900 p-8 shadow-2xl">
+        <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,_rgba(230,20,31,0.15),_transparent_50%)]" />
+        <div className="relative z-10 text-center space-y-6 max-w-3xl mx-auto">
+          <div className="inline-flex items-center justify-center h-16 w-16 rounded-full bg-[var(--accent-red)]/20 ring-2 ring-[var(--accent-red)]/30 mx-auto">
+            <svg className="h-8 w-8 text-[var(--accent-red)]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+            </svg>
+          </div>
+          <div className="space-y-3">
+            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[var(--accent-red)]">
+              Insurance Coordination
+            </p>
+            <h2 className="text-2xl sm:text-3xl font-bold text-white">
+              We Accept Most Insurance Plans
+            </h2>
+            <p className="text-base text-neutral-300 leading-relaxed">
+              Our team has experience coordinating with most major insurance carriers to streamline your repair process. We can assist with claims documentation and work directly with adjusters when possible, though specific arrangements depend on your policy and provider.
+            </p>
+          </div>
+          <div className="flex flex-wrap gap-4 justify-center pt-4">
+            <div className="flex items-center gap-2 text-sm text-neutral-400">
+              <svg className="h-5 w-5 text-[var(--accent-red)]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+              <span>Direct billing available</span>
+            </div>
+            <div className="flex items-center gap-2 text-sm text-neutral-400">
+              <svg className="h-5 w-5 text-[var(--accent-red)]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+              <span>Claims assistance</span>
+            </div>
+            <div className="flex items-center gap-2 text-sm text-neutral-400">
+              <svg className="h-5 w-5 text-[var(--accent-red)]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+              <span>Adjuster coordination</span>
+            </div>
+          </div>
+        </div>
+      </section>
+      </ScrollReveal>
 
       {/* Featured repair image */}
+      <ScrollReveal delay={100}>
       <section className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-white via-red-50/20 to-neutral-50 p-6 shadow-lg ring-1 ring-red-100/50 md:flex md:items-center md:gap-8 md:p-8">
         {/* Decorative corner accents */}
         <div className="pointer-events-none absolute -left-4 -top-4 h-32 w-32 rounded-full border-8 border-[var(--accent-red)]/5" />
@@ -271,11 +332,11 @@ export default function Home() {
         <div className="absolute right-0 top-0 h-96 w-96 -translate-y-32 translate-x-32 rounded-full bg-[var(--accent-red)]/5 blur-3xl" />
         <div className="relative mb-4 h-56 w-full overflow-hidden rounded-2xl bg-neutral-900 md:mb-0 md:h-64 md:flex-1">
           <Image
-            src="/porche.jpg"
-            alt="Freshly refinished Porsche in the Second Chance Collision shop"
+            src="/Gallery/1000134899.jpg"
+            alt="Freshly refinished vehicle in the Second Chance Collision shop"
             fill
             className="object-cover"
-            priority
+            loading="lazy"
           />
         </div>
         <div className="space-y-3 md:flex-1">
@@ -287,13 +348,15 @@ export default function Home() {
           </p>
           <p className="text-sm text-neutral-700">
             Whether it&apos;s your daily vehicle or a weekend car, we treat every
-            repair with the same care&mdash;panel gaps, reflections, and color
+            repair with the same care - panel gaps, reflections, and color
             match all matter.
           </p>
         </div>
       </section>
+      </ScrollReveal>
 
       {/* Estimate / CTA */}
+      <ScrollReveal delay={150}>
       <section className="relative overflow-hidden rounded-2xl bg-gradient-to-br from-[#12171b] via-[#1a2129] to-[#0f1419] p-6 text-sm text-neutral-100 shadow-xl md:flex md:items-center md:justify-between md:gap-6 md:p-7">
         {/* Subtle dot pattern */}
         <div className="pointer-events-none absolute inset-0 opacity-[0.03]" style={{backgroundImage: 'radial-gradient(circle, #e6141f 1px, transparent 1px)', backgroundSize: '20px 20px'}} />
@@ -318,20 +381,19 @@ export default function Home() {
             </svg>
             Call us
           </a>
-          <a
-            href="mailto:info@secondchancecollision.com"
-            className="inline-flex items-center justify-center gap-2 rounded-full border border-white/40 bg-transparent px-5 py-2 text-xs font-semibold text-white transition hover:border-white hover:bg-white/10"
+          <EmailLink
+            className="inline-flex items-center justify-center gap-2 rounded-full border border-white/40 bg-transparent px-5 py-2 text-xs font-semibold text-white transition hover:border-white hover:bg-white/10 cursor-pointer"
           >
             <svg className="h-4 w-4 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
             </svg>
             Email us
-          </a>
+          </EmailLink>
           <a
             href="https://maps.google.com/?q=416+Lilac+St+Circle+Pines+MN+55014"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center justify-center gap-2 rounded-full border border-white/40 bg-transparent px-5 py-2 text-xs font-semibold text-white transition hover:border-white hover:bg-white/10"
+            className="inline-flex items-center justify-center gap-2 rounded-full border border-white/40 bg-transparent px-5 py-2 text-xs font-semibold text-white transition hover:border-white hover:bg-white/10 cursor-pointer"
           >
             <svg className="h-4 w-4 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
@@ -341,6 +403,7 @@ export default function Home() {
           </a>
         </div>
       </section>
+      </ScrollReveal>
     </div>
   );
 }

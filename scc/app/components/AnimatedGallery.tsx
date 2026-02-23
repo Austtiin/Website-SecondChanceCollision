@@ -25,10 +25,11 @@ export default function AnimatedGallery() {
           <div className="group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2">
             <div className="relative aspect-[4/3]">
               <Image
-                src="/Gallery/car-mechanic-painting-car-with-spray-gun.jpg"
-                alt="Professional mechanic painting car"
+                src="/Gallery/1000132602.jpg"
+                alt="Professional auto body work"
                 fill
                 className="object-cover transition-transform duration-500 group-hover:scale-110"
+                loading="lazy"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
               <div className="absolute bottom-0 left-0 right-0 p-4 text-white transform translate-y-full group-hover:translate-y-0 transition-transform duration-300">
@@ -40,10 +41,11 @@ export default function AnimatedGallery() {
           <div className="group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2">
             <div className="relative aspect-[4/3]">
               <Image
-                src="/Gallery/painter.jpg"
-                alt="Skilled painter at work"
+                src="/Gallery/1000141922.jpg"
+                alt="Quality collision repair"
                 fill
                 className="object-cover transition-transform duration-500 group-hover:scale-110"
+                loading="lazy"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
               <div className="absolute bottom-0 left-0 right-0 p-4 text-white transform translate-y-full group-hover:translate-y-0 transition-transform duration-300">
@@ -55,10 +57,11 @@ export default function AnimatedGallery() {
           <div className="group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2">
             <div className="relative aspect-[4/3]">
               <Image
-                src="/Gallery/side-view-man-wearing-protection-equipment.jpg"
-                alt="Professional with safety equipment"
+                src="/Gallery/1000144912.jpg"
+                alt="Precision bodywork"
                 fill
                 className="object-cover transition-transform duration-500 group-hover:scale-110"
+                loading="lazy"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
               <div className="absolute bottom-0 left-0 right-0 p-4 text-white transform translate-y-full group-hover:translate-y-0 transition-transform duration-300">
@@ -70,10 +73,11 @@ export default function AnimatedGallery() {
           <div className="group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2">
             <div className="relative aspect-[4/3]">
               <Image
-                src="/Gallery/porsche-4891966_1280.jpg"
+                src="/Gallery/1000104629.jpg"
                 alt="High-end vehicle repair"
                 fill
                 className="object-cover transition-transform duration-500 group-hover:scale-110"
+                loading="lazy"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
               <div className="absolute bottom-0 left-0 right-0 p-4 text-white transform translate-y-full group-hover:translate-y-0 transition-transform duration-300">
@@ -87,7 +91,7 @@ export default function AnimatedGallery() {
         <div className="text-center pt-6">
           <Link
             href="/contact"
-            className="inline-flex items-center justify-center gap-2 rounded-full bg-[var(--accent-red)] px-8 py-4 text-base font-bold text-white shadow-xl transition hover:bg-red-700 hover:scale-105"
+            className="inline-flex items-center justify-center gap-2 rounded-full bg-[var(--accent-red)] px-8 py-4 text-base font-bold text-white shadow-xl transition hover:bg-red-700 hover:scale-105 cursor-pointer"
           >
             See What We Can Do For You
             <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">

@@ -5,6 +5,7 @@ import { createPortal } from "react-dom";
 import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
+import { EmailLink } from "./EmailConfirmationModal";
 
 export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -20,11 +21,17 @@ export default function Header() {
   useEffect(() => {
     if (mobileMenuOpen) {
       document.body.style.overflow = 'hidden';
+      document.body.style.position = 'fixed';
+      document.body.style.width = '100%';
     } else {
       document.body.style.overflow = '';
+      document.body.style.position = '';
+      document.body.style.width = '';
     }
     return () => {
       document.body.style.overflow = '';
+      document.body.style.position = '';
+      document.body.style.width = '';
     };
   }, [mobileMenuOpen]);
 
@@ -51,7 +58,7 @@ export default function Header() {
             </span>
             <button
               onClick={() => setMobileMenuOpen(false)}
-              className="flex items-center justify-center rounded-lg p-2 text-neutral-600 transition hover:bg-neutral-100"
+              className="flex items-center justify-center rounded-lg p-2 text-neutral-600 transition hover:bg-neutral-100 cursor-pointer"
               aria-label="Close menu"
             >
               <svg
@@ -121,8 +128,7 @@ export default function Header() {
                 </svg>
                 (000) 000-0000
               </a>
-              <a
-                href="mailto:info@secondchancecollision.com"
+              <EmailLink
                 className="flex items-center gap-2 text-[var(--accent-red)] hover:underline"
               >
                 <svg
@@ -139,7 +145,7 @@ export default function Header() {
                   />
                 </svg>
                 Email us
-              </a>
+              </EmailLink>
             </div>
           </div>
         </div>
@@ -161,23 +167,31 @@ export default function Header() {
 
   return (
     <header className="relative z-50 border-b border-b-[var(--accent-red)]/20 bg-white/80 shadow-sm backdrop-blur-md">
+      {/* Decorative gradient line */}
       <div className="absolute inset-x-0 bottom-0 h-0.5 bg-gradient-to-r from-transparent via-[var(--accent-red)] to-transparent" />
-      <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-4">
-        <Link href="/" className="flex items-center gap-4">
-          <div className="relative h-16 w-32 sm:h-20 sm:w-40 md:h-24 md:w-48 overflow-hidden">
+      
+      {/* Decorative elements */}
+      <div className="pointer-events-none absolute inset-0 overflow-hidden opacity-30">
+        <div className="absolute -top-12 -right-12 h-32 w-32 rounded-full bg-[var(--accent-red)]/10 blur-2xl" />
+        <div className="absolute -top-8 -left-8 h-24 w-24 rounded-full bg-[var(--accent-red)]/5 blur-xl" />
+      </div>
+      
+      <div className="relative z-10 mx-auto flex max-w-7xl items-center justify-between px-4 py-3">
+        <Link href="/" className="flex items-center gap-2 sm:gap-4">
+          <div className="relative h-16 w-32 sm:h-20 sm:w-40 md:h-24 md:w-48 lg:h-28 lg:w-56 overflow-hidden">
             <Image
               src="/SCC.png"
               alt="Second Chance Collision logo"
               fill
-              className="object-contain"
+              className="object-contain object-left"
               priority
             />
           </div>
           <div className="hidden sm:flex flex-col">
-            <span className="text-base font-bold tracking-wide text-[var(--accent-red)]">
+            <span className="text-sm font-bold tracking-wide text-[var(--accent-red)]">
               SECOND CHANCE COLLISION
             </span>
-            <span className="text-sm text-neutral-600">
+            <span className="text-xs text-neutral-600">
               Auto Body & Collision Repair • Circle Pines, MN
             </span>
           </div>
@@ -201,21 +215,21 @@ export default function Header() {
           >
             Contact
           </Link>
-          <a
-            href="mailto:info@secondchancecollision.com?subject=Appointment Request"
-            className="inline-flex items-center justify-center gap-2 rounded-full border-2 border-[var(--accent-red)] bg-white px-6 py-2.5 text-sm font-bold text-[var(--accent-red)] shadow-md transition hover:bg-[var(--accent-red)] hover:text-white hover:scale-105 hover:shadow-lg"
+          <EmailLink
+            subject="Appointment Request"
+            className="inline-flex items-center justify-center gap-2 rounded-full border-2 border-[var(--accent-red)] bg-white px-6 py-2.5 text-sm font-bold text-[var(--accent-red)] shadow-md transition hover:bg-[var(--accent-red)] hover:text-white hover:scale-105 hover:shadow-lg cursor-pointer"
           >
             <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
             </svg>
             Book Appointment
-          </a>
+          </EmailLink>
         </nav>
 
         {/* Mobile menu button */}
         <button
           onClick={() => setMobileMenuOpen(true)}
-          className="flex items-center justify-center rounded-lg p-2 text-neutral-800 transition hover:bg-neutral-100 md:hidden"
+          className="flex items-center justify-center rounded-lg p-2 text-neutral-800 transition hover:bg-neutral-100 md:hidden cursor-pointer"
           aria-label="Open menu"
         >
           <svg

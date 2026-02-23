@@ -1,8 +1,17 @@
+"use client";
+
 import Link from "next/link";
+import { useEmailConfirmation } from "../hooks/useEmailConfirmation";
+import EmailConfirmationModal from "../components/EmailConfirmationModal";
 
 export default function ContactPage() {
+  const { showConfirmation, handleEmailClick, closeConfirmation } = useEmailConfirmation();
+
   return (
     <div className="space-y-10">
+      {/* Email Confirmation Modal */}
+      <EmailConfirmationModal isOpen={showConfirmation} onClose={closeConfirmation} />
+
       {/* Hero banner with black/red theme */}
       <section className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-[#12171b] via-[#1a2027] to-[#0f1419] p-8 shadow-2xl md:p-12">
         {/* Decorative shapes */}
@@ -60,7 +69,7 @@ export default function ContactPage() {
               </a>
 
               {/* Email */}
-              <a href="mailto:info@secondchancecollision.com" className="group flex items-start gap-4 rounded-xl p-4 transition hover:bg-neutral-50">
+              <a href="mailto:info@secondchancecollision.com" onClick={handleEmailClick} className="group flex items-start gap-4 rounded-xl p-4 transition hover:bg-neutral-50">
                 <div className="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-xl bg-gradient-to-br from-[var(--accent-dark)] to-[#1f252c] shadow-lg">
                   <svg className="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />

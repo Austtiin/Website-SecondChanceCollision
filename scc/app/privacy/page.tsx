@@ -1,3 +1,8 @@
+"use client";
+
+import Link from "next/link";
+import { EmailLink } from "../components/EmailConfirmationModal";
+
 export default function PrivacyPolicy() {
   return (
     <div className="space-y-8">
@@ -99,7 +104,7 @@ export default function PrivacyPolicy() {
             <li>Opt out of marketing communications</li>
           </ul>
           <p className="leading-relaxed text-neutral-700">
-            To exercise these rights, please contact us at <a href="mailto:info@secondchancecollision.com" className="text-[var(--accent-red)] hover:underline">info@secondchancecollision.com</a> or call <a href="tel:0000000000" className="text-[var(--accent-red)] hover:underline">(000) 000-0000</a>.
+            To exercise these rights, please contact us at <EmailLink className="text-[var(--accent-red)] hover:underline">info@secondchancecollision.com</EmailLink> or call <a href="tel:0000000000" className="text-[var(--accent-red)] hover:underline">(000) 000-0000</a>.
           </p>
         </section>
 
@@ -130,7 +135,7 @@ export default function PrivacyPolicy() {
               Phone: <a href="tel:0000000000" className="text-[var(--accent-red)] hover:underline">(000) 000-0000</a>
             </p>
             <p className="text-neutral-700">
-              Email: <a href="mailto:info@secondchancecollision.com" className="text-[var(--accent-red)] hover:underline">info@secondchancecollision.com</a>
+              Email: <EmailLink className="text-[var(--accent-red)] hover:underline">info@secondchancecollision.com</EmailLink>
             </p>
           </div>
         </section>

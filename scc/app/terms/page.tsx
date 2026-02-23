@@ -1,3 +1,8 @@
+"use client";
+
+import Link from "next/link";
+import { EmailLink } from "../components/EmailConfirmationModal";
+
 export default function TermsAndConditions() {
   return (
     <div className="space-y-8">
@@ -36,7 +41,7 @@ export default function TermsAndConditions() {
             </p>
             <ul className="mt-4 list-disc space-y-2 pl-6 text-neutral-700">
               <li>Phone: <a href="tel:0000000000" className="text-[var(--accent-red)] hover:underline font-medium">(000) 000-0000</a></li>
-              <li>Email: <a href="mailto:info@secondchancecollision.com" className="text-[var(--accent-red)] hover:underline font-medium">info@secondchancecollision.com</a></li>
+              <li>Email: <EmailLink className="text-[var(--accent-red)] hover:underline font-medium">info@secondchancecollision.com</EmailLink></li>
               <li>In-person visit: 416 Lilac St, Circle Pines, MN 55014</li>
             </ul>
           </div>
@@ -167,7 +172,7 @@ export default function TermsAndConditions() {
               Phone: <a href="tel:0000000000" className="text-[var(--accent-red)] hover:underline">(000) 000-0000</a>
             </p>
             <p className="text-neutral-700">
-              Email: <a href="mailto:info@secondchancecollision.com" className="text-[var(--accent-red)] hover:underline">info@secondchancecollision.com</a>
+              Email: <EmailLink className="text-[var(--accent-red)] hover:underline">info@secondchancecollision.com</EmailLink>
             </p>
           </div>
         </section>
