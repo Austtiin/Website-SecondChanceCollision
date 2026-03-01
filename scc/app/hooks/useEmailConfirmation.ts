@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 
 export function useEmailConfirmation() {
   const [showConfirmation, setShowConfirmation] = useState(false);
+  const [emailHref, setEmailHref] = useState<string>("");
 
   // Prevent body scroll when modal is open
   useEffect(() => {
@@ -19,18 +20,20 @@ export function useEmailConfirmation() {
 
   const handleEmailClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
     e.preventDefault();
-    setShowConfirmation(true);
-    // Open the mail client
     const href = e.currentTarget.href;
-    window.location.href = href;
+    setEmailHref(href);
+    setShowConfirmation(true);
+    // Don't redirect immediately - let the countdown finish first
   };
 
   const closeConfirmation = () => {
     setShowConfirmation(false);
+    setEmailHref("");
   };
 
   return {
     showConfirmation,
+    emailHref,
     handleEmailClick,
     closeConfirmation,
   };

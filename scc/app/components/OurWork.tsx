@@ -17,11 +17,29 @@ interface OurWorkProps {
 export default function OurWork({ projects }: OurWorkProps) {
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
   const [mounted, setMounted] = useState(false);
+  const [displayedProjects, setDisplayedProjects] = useState<Project[]>([]);
 
   // Track mount state for portal
   useEffect(() => {
     setMounted(true);
   }, []);
+
+  // Randomize and select projects to display
+  useEffect(() => {
+    if (!projects || projects.length === 0) {
+      setDisplayedProjects([]);
+      return;
+    }
+
+    // If 6 or more projects, randomly select 6
+    if (projects.length >= 6) {
+      const shuffled = [...projects].sort(() => Math.random() - 0.5);
+      setDisplayedProjects(shuffled.slice(0, 6));
+    } else {
+      // Show all projects if less than 6
+      setDisplayedProjects(projects);
+    }
+  }, [projects]);
 
   // Prevent body scroll when modal is open
   useEffect(() => {
@@ -205,7 +223,7 @@ export default function OurWork({ projects }: OurWorkProps) {
 
         {/* Project Cards Grid */}
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {projects.map((project, index) => (
+          {displayedProjects.map((project, index) => (
             <button
               key={index}
               onClick={() => setSelectedProject(project)}
