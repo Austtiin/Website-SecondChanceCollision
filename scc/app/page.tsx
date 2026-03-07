@@ -14,7 +14,7 @@ export default function Home() {
   return (
     <div className="space-y-12">
       {/* Modern Hero Section */}
-      <section className="relative overflow-hidden rounded-3xl shadow-2xl h-[600px] sm:h-[650px] lg:h-[700px] flex flex-col">
+      <section className="relative overflow-hidden rounded-3xl shadow-2xl min-h-[min(720px,calc(100dvh-8rem))] flex flex-col">
         {/* Background Image with Overlay */}
         <div className="absolute inset-0">
           <Image
@@ -27,6 +27,8 @@ export default function Home() {
           {/* Multi-layered overlay for depth - lighter overlay */}
           <div className="absolute inset-0 bg-gradient-to-br from-[#12171b]/70 via-[#12171b]/60 to-[#0a0d10]/70" />
           <div className="absolute inset-0 bg-gradient-to-t from-[#12171b]/80 via-transparent to-transparent" />
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_18%_14%,rgba(255,255,255,0.15),transparent_45%)]" />
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_82%_86%,rgba(230,20,31,0.22),transparent_38%)]" />
         </div>
         
         {/* Decorative Elements - Geometric Shapes */}
@@ -43,12 +45,16 @@ export default function Home() {
           {/* Corner accents */}
           <div className="absolute top-0 left-0 h-32 w-32 border-t-2 border-l-2 border-[var(--accent-red)]/30 rounded-tl-3xl" />
           <div className="absolute bottom-0 right-0 h-32 w-32 border-b-2 border-r-2 border-[var(--accent-red)]/30 rounded-br-3xl" />
+
+          {/* Subtle frame and vignette */}
+          <div className="absolute inset-0 rounded-3xl ring-1 ring-white/15" />
+          <div className="absolute inset-0 rounded-3xl shadow-[inset_0_-120px_120px_-90px_rgba(0,0,0,0.6)]" />
         </div>
         
-        <div className="relative flex-1 flex items-center justify-center py-6 sm:py-8 px-4 sm:px-8 lg:px-12 animate-in fade-in duration-500">
-          <div className="max-w-4xl mx-auto text-center space-y-3 sm:space-y-4 w-full">
+        <div className="relative flex-1 flex items-center justify-center py-4 sm:py-6 px-4 sm:px-8 lg:px-12 animate-in fade-in duration-500">
+          <div className="max-w-4xl mx-auto text-center space-y-2 sm:space-y-3 w-full">
             {/* Badge */}
-            <div className="inline-flex items-center gap-2 rounded-full bg-[var(--accent-red)]/20 px-4 py-2 ring-1 ring-[var(--accent-red)]/30 animate-in slide-in-from-top-4 duration-500 delay-100">
+            <div className="inline-flex items-center gap-2 rounded-full bg-[var(--accent-red)]/20 px-4 py-1.5 ring-1 ring-[var(--accent-red)]/30 animate-in slide-in-from-top-4 duration-500 delay-100">
               <div className="h-2 w-2 animate-pulse rounded-full bg-[var(--accent-red)]" />
               <span className="text-[10px] sm:text-xs font-bold uppercase tracking-wider text-red-300">
                 Circle Pines, MN • Serving North Metro
@@ -57,7 +63,7 @@ export default function Home() {
             
             {/* Hero Title */}
             <div className="space-y-2 sm:space-y-3 animate-in slide-in-from-bottom-4 duration-500 delay-150">
-              <h1 className="text-2xl font-bold leading-tight tracking-tight text-white sm:text-3xl lg:text-5xl">
+              <h1 className="text-2xl font-bold leading-tight tracking-tight text-white sm:text-3xl lg:text-4xl">
                 Expert Collision Repair &<br />Auto Body Services
               </h1>
               <p className="hidden sm:block text-xs sm:text-base lg:text-lg leading-relaxed text-neutral-300 max-w-2xl mx-auto">
@@ -68,8 +74,8 @@ export default function Home() {
             {/* CTA Buttons */}
             <div className="flex flex-wrap items-center justify-center gap-2 sm:gap-3 animate-in fade-in duration-500 delay-200">
               <a
-                href="tel:0000000000"
-                className="inline-flex items-center justify-center gap-2 rounded-full bg-[var(--accent-red)] px-6 py-3 sm:px-6 sm:py-3 text-sm sm:text-sm font-bold text-white shadow-xl transition hover:bg-red-700 hover:scale-105 cursor-pointer"
+                href="tel:612-913-6594"
+                className="inline-flex items-center justify-center gap-2 rounded-full bg-[var(--accent-red)] px-5 py-2.5 sm:px-6 sm:py-3 text-sm sm:text-sm font-bold text-white shadow-xl transition hover:bg-red-700 hover:scale-105 cursor-pointer"
               >
                 <svg className="h-5 w-5 sm:h-4 sm:w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
@@ -78,7 +84,7 @@ export default function Home() {
               </a>
               <EmailLink
                 subject="Appointment Request"
-                className="inline-flex items-center justify-center gap-2 rounded-full border-2 border-white bg-white px-6 py-3 sm:px-6 sm:py-3 text-sm sm:text-sm font-bold text-[#12171b] shadow-xl transition hover:bg-neutral-100 hover:scale-105 cursor-pointer"
+                className="inline-flex items-center justify-center gap-2 rounded-full border-2 border-white bg-white px-5 py-2.5 sm:px-6 sm:py-3 text-sm sm:text-sm font-bold text-[#12171b] shadow-xl transition hover:bg-neutral-100 hover:scale-105 cursor-pointer"
               >
                 <svg className="h-5 w-5 sm:h-4 sm:w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
@@ -88,32 +94,32 @@ export default function Home() {
             </div>
             
             {/* Quick Info Grid - Pyramid on mobile: 2 cards top, 1 bottom */}
-            <div className="grid gap-4 grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 pt-4 sm:pt-5 max-w-3xl mx-auto">
-              <div className="text-center space-y-2 mx-auto max-w-xs sm:max-w-none animate-in fade-in duration-400 delay-250">
-                <div className="inline-flex items-center justify-center h-14 w-14 rounded-full bg-[var(--accent-red)]/20 ring-1 ring-[var(--accent-red)]/30 mx-auto">
-                  <svg className="h-7 w-7 text-[var(--accent-red)]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <div className="grid gap-3 grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 pt-3 sm:pt-4 max-w-3xl mx-auto">
+              <div className="text-center space-y-1.5 mx-auto max-w-xs sm:max-w-none animate-in fade-in duration-400 delay-250">
+                <div className="inline-flex items-center justify-center h-12 w-12 rounded-full bg-[var(--accent-red)]/20 ring-1 ring-[var(--accent-red)]/30 mx-auto">
+                  <svg className="h-6 w-6 text-[var(--accent-red)]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
                   </svg>
                 </div>
-                <p className="text-sm font-semibold text-white">Certified Technicians</p>
+                <p className="text-xs sm:text-sm font-semibold text-white">Certified Technicians</p>
                 <p className="text-xs text-neutral-400">Expert craftsmanship</p>
               </div>
-              <div className="text-center space-y-2 mx-auto max-w-xs sm:max-w-none animate-in fade-in duration-400 delay-300">
-                <div className="inline-flex items-center justify-center h-14 w-14 rounded-full bg-[var(--accent-red)]/20 ring-1 ring-[var(--accent-red)]/30 mx-auto">
-                  <svg className="h-7 w-7 text-[var(--accent-red)]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <div className="text-center space-y-1.5 mx-auto max-w-xs sm:max-w-none animate-in fade-in duration-400 delay-300">
+                <div className="inline-flex items-center justify-center h-12 w-12 rounded-full bg-[var(--accent-red)]/20 ring-1 ring-[var(--accent-red)]/30 mx-auto">
+                  <svg className="h-6 w-6 text-[var(--accent-red)]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
                   </svg>
                 </div>
-                <p className="text-sm font-semibold text-white">Open 6 Days a Week</p>
+                <p className="text-xs sm:text-sm font-semibold text-white">Open 6 Days a Week</p>
                 <p className="text-xs text-neutral-400">Mon-Sat for your convenience</p>
               </div>
-              <div className="text-center space-y-2 mx-auto max-w-xs sm:max-w-none col-span-2 sm:col-span-1 animate-in fade-in duration-400 delay-350">
-                <div className="inline-flex items-center justify-center h-14 w-14 rounded-full bg-[var(--accent-red)]/20 ring-1 ring-[var(--accent-red)]/30 mx-auto">
-                  <svg className="h-7 w-7 text-[var(--accent-red)]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <div className="text-center space-y-1.5 mx-auto max-w-xs sm:max-w-none col-span-2 sm:col-span-1 animate-in fade-in duration-400 delay-350">
+                <div className="inline-flex items-center justify-center h-12 w-12 rounded-full bg-[var(--accent-red)]/20 ring-1 ring-[var(--accent-red)]/30 mx-auto">
+                  <svg className="h-6 w-6 text-[var(--accent-red)]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
                   </svg>
                 </div>
-                <p className="text-sm font-semibold text-white">416 Lilac St, Circle Pines</p>
+                <p className="text-xs sm:text-sm font-semibold text-white">416 Lilac St, Circle Pines</p>
                 <p className="text-xs text-neutral-400">Easy access from I-35W</p>
               </div>
             </div>
@@ -121,7 +127,7 @@ export default function Home() {
         </div>
         
         {/* Scroll Indicator */}
-        <div className="relative pb-3 sm:pb-4 z-20 flex justify-center">
+        <div className="relative pb-2 sm:pb-3 z-20 flex justify-center">
           <ScrollButton targetId="services-section" />
         </div>
       </section>
@@ -373,7 +379,7 @@ export default function Home() {
         </div>
         <div className="relative z-10 mt-4 flex flex-wrap gap-3 md:mt-0 md:justify-end">
           <a
-            href="tel:0000000000"
+            href="tel:612-913-6594"
             className="inline-flex items-center justify-center gap-2 rounded-full bg-[var(--accent-red)] px-5 py-2.5 text-xs font-bold text-white shadow-lg transition hover:bg-red-700 hover:shadow-xl active:scale-95 cursor-pointer"
           >
             <svg className="h-4 w-4 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -407,3 +413,4 @@ export default function Home() {
     </div>
   );
 }
+

@@ -1,7 +1,7 @@
 "use client";
 
 import { useEmailConfirmation } from "../hooks/useEmailConfirmation";
-import { useEffect, useState } from "react";
+import { useLayoutEffect, useEffect, useState } from "react";
 import { createPortal } from "react-dom";
 
 interface EmailLinkProps {
@@ -11,7 +11,7 @@ interface EmailLinkProps {
   children: React.ReactNode;
 }
 
-export function EmailLink({ href = "mailto:info@secondchancecollision.com", subject, className, children }: EmailLinkProps) {
+export function EmailLink({ href = "mailto:shop@secondchance-collision.com", subject, className, children }: EmailLinkProps) {
   const { showConfirmation, emailHref, handleEmailClick, closeConfirmation } = useEmailConfirmation();
   
   const emailHrefWithSubject = subject ? `${href}?subject=${encodeURIComponent(subject)}` : href;
@@ -36,7 +36,7 @@ export default function EmailConfirmationModal({ isOpen, onClose, emailHref }: E
   const [mounted, setMounted] = useState(false);
   const [countdown, setCountdown] = useState(5);
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     setMounted(true);
   }, []);
 
@@ -100,22 +100,22 @@ export default function EmailConfirmationModal({ isOpen, onClose, emailHref }: E
             </p>
             <div className="space-y-3 text-sm">
               <a 
-                href="mailto:info@secondchancecollision.com" 
+                href="mailto:shop@secondchance-collision.com" 
                 className="flex items-center justify-center gap-2 font-semibold text-[var(--accent-red)] hover:underline"
               >
                 <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                 </svg>
-                info@secondchancecollision.com
+                shop@secondchance-collision.com
               </a>
               <a 
-                href="tel:0000000000" 
+                href="tel:612-913-6594" 
                 className="flex items-center justify-center gap-2 font-semibold text-[var(--accent-red)] hover:underline"
               >
                 <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
                 </svg>
-                (000) 000-0000
+                (612) 913-6594
               </a>
             </div>
           </div>
@@ -133,3 +133,4 @@ export default function EmailConfirmationModal({ isOpen, onClose, emailHref }: E
     document.body
   );
 }
+

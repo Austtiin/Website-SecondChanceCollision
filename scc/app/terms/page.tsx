@@ -40,8 +40,8 @@ export default function TermsAndConditions() {
               This website is informational only and does not constitute an offer for sale or a binding contract for services. No sales, purchases, or service agreements are made through this website. All service requests, estimates, and agreements must be confirmed directly with Second Chance Collision through:
             </p>
             <ul className="mt-4 list-disc space-y-2 pl-6 text-neutral-700">
-              <li>Phone: <a href="tel:0000000000" className="text-[var(--accent-red)] hover:underline font-medium">(000) 000-0000</a></li>
-              <li>Email: <EmailLink className="text-[var(--accent-red)] hover:underline font-medium">info@secondchancecollision.com</EmailLink></li>
+              <li>Phone: <a href="tel:612-913-6594" className="text-[var(--accent-red)] hover:underline font-medium">(612) 913-6594</a></li>
+              <li>Email: <EmailLink className="text-[var(--accent-red)] hover:underline font-medium">shop@secondchance-collision.com</EmailLink></li>
               <li>In-person visit: 416 Lilac St, Circle Pines, MN 55014</li>
             </ul>
           </div>
@@ -169,10 +169,10 @@ export default function TermsAndConditions() {
             <p className="text-neutral-700">416 Lilac St</p>
             <p className="text-neutral-700">Circle Pines, MN 55014</p>
             <p className="mt-2 text-neutral-700">
-              Phone: <a href="tel:0000000000" className="text-[var(--accent-red)] hover:underline">(000) 000-0000</a>
+              Phone: <a href="tel:612-913-6594" className="text-[var(--accent-red)] hover:underline">(612) 913-6594</a>
             </p>
             <p className="text-neutral-700">
-              Email: <EmailLink className="text-[var(--accent-red)] hover:underline">info@secondchancecollision.com</EmailLink>
+              Email: <EmailLink className="text-[var(--accent-red)] hover:underline">shop@secondchance-collision.com</EmailLink>
             </p>
           </div>
         </section>

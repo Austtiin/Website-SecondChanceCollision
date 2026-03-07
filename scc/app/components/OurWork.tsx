@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useLayoutEffect } from "react";
 import { createPortal } from "react-dom";
 import { EmailLink } from "./EmailConfirmationModal";
 
@@ -21,7 +21,7 @@ export default function OurWork({ projects }: OurWorkProps) {
   const [lightboxImage, setLightboxImage] = useState<string | null>(null);
 
   // Track mount state for portal
-  useEffect(() => {
+  useLayoutEffect(() => {
     setMounted(true);
   }, []);
 
@@ -196,7 +196,7 @@ export default function OurWork({ projects }: OurWorkProps) {
                 </div>
                 <div className="flex flex-wrap items-center justify-center gap-3">
                   <a
-                    href="tel:0000000000"
+                    href="tel:612-913-6594"
                     className="inline-flex items-center justify-center gap-2 rounded-full bg-[var(--accent-red)] px-6 py-3 text-sm font-bold text-white shadow-lg transition hover:bg-red-700 hover:scale-105 cursor-pointer"
                   >
                     <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -260,6 +260,18 @@ export default function OurWork({ projects }: OurWorkProps) {
             className="object-contain"
             quality={100}
           />
+          {/* Watermark on lightbox image */}
+          <div className="absolute bottom-4 right-4 opacity-90 pointer-events-none">
+            <div className="relative h-20 w-40">
+              <Image
+                src="/SCC.png"
+                alt="SCC"
+                fill
+                className="object-contain"
+                style={{ filter: 'drop-shadow(2px 2px 4px rgba(0,0,0,0.5))' }}
+              />
+            </div>
+          </div>
         </div>
       </div>
     </>,

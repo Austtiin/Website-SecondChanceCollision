@@ -107,7 +107,7 @@ export default function PrivacyPolicy() {
             <li>Opt out of marketing communications</li>
           </ul>
           <p className="leading-relaxed text-neutral-700">
-            To exercise these rights, please contact us at <EmailLink className="text-[var(--accent-red)] hover:underline">info@secondchancecollision.com</EmailLink> or call <a href="tel:0000000000" className="text-[var(--accent-red)] hover:underline">(000) 000-0000</a>.
+            To exercise these rights, please contact us at <EmailLink className="text-[var(--accent-red)] hover:underline">shop@secondchance-collision.com</EmailLink> or call <a href="tel:612-913-6594" className="text-[var(--accent-red)] hover:underline">(612) 913-6594</a>.
           </p>
         </section>
 
@@ -135,10 +135,10 @@ export default function PrivacyPolicy() {
             <p className="text-neutral-700">416 Lilac St</p>
             <p className="text-neutral-700">Circle Pines, MN 55014</p>
             <p className="mt-2 text-neutral-700">
-              Phone: <a href="tel:0000000000" className="text-[var(--accent-red)] hover:underline">(000) 000-0000</a>
+              Phone: <a href="tel:612-913-6594" className="text-[var(--accent-red)] hover:underline">(612) 913-6594</a>
             </p>
             <p className="text-neutral-700">
-              Email: <EmailLink className="text-[var(--accent-red)] hover:underline">info@secondchancecollision.com</EmailLink>
+              Email: <EmailLink className="text-[var(--accent-red)] hover:underline">shop@secondchance-collision.com</EmailLink>
             </p>
           </div>
         </section>

@@ -120,7 +120,7 @@ export default function RootLayout({
           <Header />
 
           <main className="relative flex-1">
-            <div className="mx-auto max-w-7xl px-4 py-10">{children}</div>
+            <div className="mx-auto max-w-7xl px-4 pt-[5px] pb-10">{children}</div>
           </main>
 
           <FooterContent />

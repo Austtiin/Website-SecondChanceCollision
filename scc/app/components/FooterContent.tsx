@@ -34,11 +34,11 @@ export default function FooterContent() {
               <p>416 Lilac St</p>
               <p>Circle Pines, MN 55014</p>
               <p className="pt-2">
-                <a href="tel:0000000000" className="text-red-400 hover:text-red-300 font-medium transition">(000) 000-0000</a>
+                <a href="tel:612-913-6594" className="text-red-400 hover:text-red-300 font-medium transition">(612) 913-6594</a>
               </p>
               <p>
                 <EmailLink className="text-red-400 hover:text-red-300 font-medium transition">
-                  info@secondchancecollision.com
+                  shop@secondchance-collision.com
                 </EmailLink>
               </p>
             </div>
@@ -61,6 +61,8 @@ export default function FooterContent() {
             © {new Date().getFullYear()} Second Chance Collision. All rights reserved.
           </p>
           <div className="flex flex-wrap gap-4 text-sm">
+            <Link href="/faq" className="text-neutral-300 hover:text-white transition">FAQ</Link>
+            <Link href="/right-to-know" className="text-neutral-300 hover:text-white transition">Your Rights</Link>
             <Link href="/privacy" className="text-neutral-300 hover:text-white transition">Privacy Policy</Link>
             <Link href="/terms" className="text-neutral-300 hover:text-white transition">Terms & Conditions</Link>
           </div>
@@ -93,3 +95,4 @@ export default function FooterContent() {
     </footer>
   );
 }
+

@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useLayoutEffect } from "react";
 import { createPortal } from "react-dom";
 import Link from "next/link";
 import Image from "next/image";
@@ -13,7 +13,7 @@ export default function Header() {
   const pathname = usePathname();
 
   // Track mount state for portal
-  useEffect(() => {
+  useLayoutEffect(() => {
     setMounted(true);
   }, []);
 
@@ -91,6 +91,28 @@ export default function Header() {
               Home
             </Link>
             <Link
+              href="/faq"
+              onClick={() => setMobileMenuOpen(false)}
+              className={`rounded-lg px-4 py-3 text-base font-medium transition hover:bg-neutral-100 ${
+                pathname === "/faq"
+                  ? "bg-red-50 text-[var(--accent-red)]"
+                  : "text-neutral-800"
+              }`}
+            >
+              FAQ
+            </Link>
+            <Link
+              href="/right-to-know"
+              onClick={() => setMobileMenuOpen(false)}
+              className={`rounded-lg px-4 py-3 text-base font-medium transition hover:bg-neutral-100 ${
+                pathname === "/right-to-know"
+                  ? "bg-red-50 text-[var(--accent-red)]"
+                  : "text-neutral-800"
+              }`}
+            >
+              Your Rights
+            </Link>
+            <Link
               href="/contact"
               onClick={() => setMobileMenuOpen(false)}
               className={`rounded-lg px-4 py-3 text-base font-medium transition hover:bg-neutral-100 ${
@@ -110,7 +132,7 @@ export default function Header() {
             </p>
             <div className="space-y-2 text-sm">
               <a
-                href="tel:0000000000"
+                href="tel:612-913-6594"
                 className="flex items-center gap-2 text-[var(--accent-red)] hover:underline"
               >
                 <svg
@@ -126,7 +148,7 @@ export default function Header() {
                     d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"
                   />
                 </svg>
-                (000) 000-0000
+                (612) 913-6594
               </a>
               <EmailLink
                 className="flex items-center gap-2 text-[var(--accent-red)] hover:underline"
@@ -208,6 +230,22 @@ export default function Header() {
             Home
           </Link>
           <Link
+            href="/faq"
+            className={`hover:text-[var(--accent-red)] transition ${
+              pathname === "/faq" ? "text-[var(--accent-red)]" : ""
+            }`}
+          >
+            FAQ
+          </Link>
+          <Link
+            href="/right-to-know"
+            className={`hover:text-[var(--accent-red)] transition ${
+              pathname === "/right-to-know" ? "text-[var(--accent-red)]" : ""
+            }`}
+          >
+            Your Rights
+          </Link>
+          <Link
             href="/contact"
             className={`hover:text-[var(--accent-red)] transition ${
               pathname === "/contact" ? "text-[var(--accent-red)]" : ""
@@ -252,3 +290,4 @@ export default function Header() {
     </header>
   );
 }
+
