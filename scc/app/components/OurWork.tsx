@@ -18,6 +18,7 @@ export default function OurWork({ projects }: OurWorkProps) {
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
   const [mounted, setMounted] = useState(false);
   const [displayedProjects, setDisplayedProjects] = useState<Project[]>([]);
+  const [lightboxImage, setLightboxImage] = useState<string | null>(null);
 
   // Track mount state for portal
   useEffect(() => {
@@ -41,9 +42,9 @@ export default function OurWork({ projects }: OurWorkProps) {
     }
   }, [projects]);
 
-  // Prevent body scroll when modal is open
+  // Prevent body scroll when modal or lightbox is open
   useEffect(() => {
-    if (selectedProject) {
+    if (selectedProject || lightboxImage) {
       document.body.style.overflow = 'hidden';
       document.body.style.height = '100vh';
     } else {
@@ -54,7 +55,7 @@ export default function OurWork({ projects }: OurWorkProps) {
       document.body.style.overflow = '';
       document.body.style.height = '';
     };
-  }, [selectedProject]);
+  }, [selectedProject, lightboxImage]);
 
   // Empty projects early return
   if (!projects || projects.length === 0) {
@@ -138,7 +139,11 @@ export default function OurWork({ projects }: OurWorkProps) {
                 const isVideo = file.endsWith('.mp4') || file.endsWith('.mov') || file.endsWith('.avi');
                 
                 return (
-                  <div key={fileIndex} className="relative rounded-xl bg-neutral-900 shadow-lg aspect-video overflow-hidden">
+                  <div 
+                    key={fileIndex} 
+                    className={`relative rounded-xl bg-neutral-900 shadow-lg aspect-video overflow-hidden ${!isVideo ? 'cursor-pointer hover:ring-4 hover:ring-[var(--accent-red)]/50 transition' : ''}`}
+                    onClick={() => !isVideo && setLightboxImage(file)}
+                  >
                     {isVideo ? (
                       <video 
                         src={file} 
@@ -146,12 +151,22 @@ export default function OurWork({ projects }: OurWorkProps) {
                         className="h-full w-full object-cover"
                       />
                     ) : (
-                      <Image
-                        src={file}
-                        alt={`${selectedProject.name} - Image ${fileIndex + 1}`}
-                        fill
-                        className="object-cover"
-                      />
+                      <>
+                        <Image
+                          src={file}
+                          alt={`${selectedProject.name} - Image ${fileIndex + 1}`}
+                          fill
+                          className="object-cover transition hover:scale-105"
+                        />
+                        {/* Zoom indicator on hover */}
+                        <div className="absolute inset-0 bg-black/0 hover:bg-black/20 transition flex items-center justify-center opacity-0 hover:opacity-100">
+                          <div className="h-12 w-12 rounded-full bg-white/90 backdrop-blur-sm flex items-center justify-center">
+                            <svg className="h-6 w-6 text-[var(--accent-dark)]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7" />
+                            </svg>
+                          </div>
+                        </div>
+                      </>
                     )}
                     {/* Watermark on each image - large in bottom right */}
                     <div className="absolute bottom-3 right-3 opacity-90 pointer-events-none">
@@ -208,9 +223,53 @@ export default function OurWork({ projects }: OurWorkProps) {
     document.body
   ) : null;
 
+  // Create lightbox portal for full-screen image viewing
+  const lightbox = lightboxImage && mounted ? createPortal(
+    <>
+      {/* Full screen backdrop */}
+      <div 
+        className="fixed inset-0 z-[10002] bg-black/98 backdrop-blur-lg"
+        onClick={() => setLightboxImage(null)}
+      />
+      
+      {/* Lightbox content */}
+      <div 
+        className="fixed inset-0 z-[10003] flex items-center justify-center p-4"
+        onClick={() => setLightboxImage(null)}
+      >
+        {/* Close Button */}
+        <button
+          onClick={() => setLightboxImage(null)}
+          className="absolute top-4 right-4 z-10 h-12 w-12 rounded-full bg-white/10 backdrop-blur-sm flex items-center justify-center text-white hover:bg-white/20 transition cursor-pointer"
+          aria-label="Close lightbox"
+        >
+          <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+          </svg>
+        </button>
+
+        {/* Image container */}
+        <div 
+          className="relative max-w-7xl max-h-[90vh] w-full h-full"
+          onClick={(e) => e.stopPropagation()}
+        >
+          <Image
+            src={lightboxImage}
+            alt="Full size view"
+            fill
+            className="object-contain"
+            quality={100}
+          />
+        </div>
+      </div>
+    </>,
+    document.body
+  ) : null;
+
   return (
     <>
-      <section className="relative space-y-8">
+      <section className="relative space-y-8">{modal}
+      {lightbox}
         <div className="text-center space-y-3">
           <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[var(--accent-red)]">
             Portfolio
@@ -238,28 +297,14 @@ export default function OurWork({ projects }: OurWorkProps) {
                 loading="lazy"
               />
               
-              {/* Gradient Overlay */}
-              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent" />
-              
-              {/* Project Title */}
-              <div className="absolute inset-x-0 bottom-0 p-6 space-y-2">
-                <h3 className="text-2xl font-bold text-white">{project.name}</h3>
-                <div className="flex items-center gap-2 text-sm text-white/90">
-                  <span>{project.files.length} {project.files.length === 1 ? 'Photo' : 'Photos'}</span>
-                  <span>•</span>
-                  <span className="flex items-center gap-1">
-                    View Gallery
-                    <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                    </svg>
-                  </span>
-                </div>
-              </div>
+              {/* Subtle Gradient Overlay - less prominent */}
+              <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition" />
               
               {/* Hover Indicator */}
-              <div className="absolute top-4 right-4 h-10 w-10 rounded-full bg-white/20 backdrop-blur-sm flex items-center justify-center opacity-0 group-hover:opacity-100 transition">
-                <svg className="h-5 w-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7" />
+              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 h-16 w-16 rounded-full bg-white/90 backdrop-blur-sm flex items-center justify-center opacity-0 group-hover:opacity-100 transition">
+                <svg className="h-8 w-8 text-[var(--accent-dark)]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
                 </svg>
               </div>
             </button>

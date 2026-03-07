@@ -48,7 +48,7 @@ export default function PrivacyPolicy() {
             <li>Device type and browser information</li>
           </ul>
           <p className="leading-relaxed text-neutral-700">
-            This data is anonymous and aggregated. Google Analytics uses cookies to track this information. You can opt out of Google Analytics by installing the <a href="https://tools.google.com/dlpage/gaoptout" target="_blank" rel="noopener noreferrer" className="text-[var(--accent-red)] hover:underline">Google Analytics Opt-out Browser Add-on</a>.
+            This data is anonymous and aggregated. Google Analytics uses cookies to track this information. <strong>We only enable Google Analytics tracking after you have accepted our cookie consent banner.</strong> You can opt out of Google Analytics by installing the <a href="https://tools.google.com/dlpage/gaoptout" target="_blank" rel="noopener noreferrer" className="text-[var(--accent-red)] hover:underline">Google Analytics Opt-out Browser Add-on</a>.
           </p>
         </section>
 
@@ -81,7 +81,10 @@ export default function PrivacyPolicy() {
         <section className="space-y-4">
           <h2 className="text-2xl font-bold text-[var(--accent-dark)]">Cookies</h2>
           <p className="leading-relaxed text-neutral-700">
-            Our website uses cookies to enhance your browsing experience and gather analytics data. Cookies are small text files stored on your device. You can control cookie settings through your browser preferences, but disabling cookies may limit some website functionality.
+            Our website uses cookies to enhance your browsing experience and gather analytics data. Cookies are small text files stored on your device. When you first visit our website, you will be presented with a cookie consent banner that allows you to accept or decline the use of cookies for analytics purposes.
+          </p>
+          <p className="leading-relaxed text-neutral-700">
+            You can control cookie settings through your browser preferences, but disabling cookies may limit some website functionality. Your consent choice is stored locally on your device and will be remembered for future visits.
           </p>
         </section>
 

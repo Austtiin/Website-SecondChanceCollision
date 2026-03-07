@@ -3,10 +3,12 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import Image from "next/image";
 import Link from "next/link";
+import Script from "next/script";
 import "./globals.css";
 import Header from "./components/Header";
 import FooterContent from "./components/FooterContent";
 import FloatingElements from "./components/FloatingElements";
+import CookieConsent from "./components/CookieConsent";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -39,7 +41,46 @@ export default function RootLayout({
     <html lang="en">
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
+      >        {/* Google Analytics with Consent Mode */}
+        <Script id="google-consent-default" strategy="beforeInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            
+            // Set default consent to 'denied' as a placeholder
+            gtag('consent', 'default', {
+              'analytics_storage': 'denied',
+              'ad_storage': 'denied',
+              'ad_user_data': 'denied',
+              'ad_personalization': 'denied',
+              'wait_for_update': 500
+            });
+            
+            // Check if user has previously consented
+            if (typeof window !== 'undefined') {
+              const consent = localStorage.getItem('cookie-consent');
+              if (consent === 'accepted') {
+                gtag('consent', 'update', {
+                  'analytics_storage': 'granted'
+                });
+              }
+            }
+          `}
+        </Script>
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-V7X7BFHZ24"
+          strategy="afterInteractive"
+        />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-V7X7BFHZ24', {
+              'anonymize_ip': true
+            });
+          `}
+        </Script>
         <React.StrictMode>
           <div className="relative min-h-screen flex flex-col overflow-hidden bg-gradient-to-br from-neutral-50 via-white to-neutral-100 text-[var(--foreground)]">
             {/* Floating animated elements */}
@@ -83,6 +124,9 @@ export default function RootLayout({
           </main>
 
           <FooterContent />
+          
+          {/* Cookie Consent Banner */}
+          <CookieConsent />
           </div>
         </React.StrictMode>
       </body>

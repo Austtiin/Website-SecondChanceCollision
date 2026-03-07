@@ -5,12 +5,12 @@ import { useEmailConfirmation } from "../hooks/useEmailConfirmation";
 import EmailConfirmationModal from "../components/EmailConfirmationModal";
 
 export default function ContactPage() {
-  const { showConfirmation, handleEmailClick, closeConfirmation } = useEmailConfirmation();
+  const { showConfirmation, emailHref, handleEmailClick, closeConfirmation } = useEmailConfirmation();
 
   return (
     <div className="space-y-10">
       {/* Email Confirmation Modal */}
-      <EmailConfirmationModal isOpen={showConfirmation} onClose={closeConfirmation} />
+      <EmailConfirmationModal isOpen={showConfirmation} onClose={closeConfirmation} emailHref={emailHref} />
 
       {/* Hero banner with black/red theme */}
       <section className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-[#12171b] via-[#1a2027] to-[#0f1419] p-8 shadow-2xl md:p-12">
