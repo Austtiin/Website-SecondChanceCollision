@@ -27,7 +27,7 @@ const faqs: FAQItem[] = [
   },
   {
     question: "Do you offer loaner vehicles?",
-    answer: "Yes! We offer free loaner vehicles to our customers while your vehicle is being repaired. We maintain a variety of vehicles to meet your transportation needs during the repair process.",
+    answer: "While we don't provide loaner vehicles, we work quickly to get your vehicle back on the road as soon as possible. We're happy to recommend local rental companies if you need temporary transportation during repairs.",
   },
   {
     question: "Do I need an appointment for an estimate?",
@@ -35,7 +35,7 @@ const faqs: FAQItem[] = [
   },
   {
     question: "When can I drop off my vehicle?",
-    answer: "You can drop off your vehicle anytime during our business hours (Mon-Fri: 8AM-5PM, Sat: 9AM-2PM). For after-hours drop-offs, we have a secure key drop at our back door.",
+    answer: "You can drop off your vehicle anytime during our business hours (Monday – Friday: 9AM-5PM). For after-hours drop-offs, we have a secure key drop at our back door.",
   },
   {
     question: "Do you work with insurance companies?",

@@ -48,9 +48,8 @@ export default function FooterContent() {
           <div className="space-y-3">
             <h3 className="text-base font-bold uppercase tracking-wider text-white">Hours</h3>
             <div className="space-y-1.5 text-base text-neutral-200">
-              <p><span className="font-medium text-white">Mon-Fri:</span> 8:00 AM - 5:00 PM</p>
-              <p><span className="font-medium text-white">Sat:</span> 9:00 AM - 2:00 PM</p>
-              <p><span className="font-medium text-white">Sun:</span> Closed</p>
+              <p><span className="font-medium text-white">Monday – Friday:</span> 9:00 AM - 5:00 PM</p>
+              <p><span className="font-medium text-white">Sat-Sun:</span> Closed</p>
             </div>
           </div>
         </div>

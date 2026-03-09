@@ -208,7 +208,7 @@ export default function Home() {
             </div>
           </div>
 
-          {/* Auto Maintenance */}
+          {/* Frame Repair */}
           <div className="relative overflow-hidden rounded-2xl bg-gradient-to-br from-white to-neutral-50 p-6 shadow-lg ring-1 ring-black/5 transition hover:shadow-xl">
             <div className="pointer-events-none absolute -right-8 -top-8 h-24 w-24 rounded-full bg-[var(--accent-dark)]/10 blur-2xl" />
             <div className="relative space-y-4">
@@ -219,16 +219,16 @@ export default function Home() {
                 </svg>
               </div>
               <div className="space-y-2">
-                <p className="text-xs font-bold uppercase tracking-wider text-[var(--accent-red)]">General Maintenance</p>
-                <h3 className="text-lg font-bold text-[var(--accent-dark)]">Routine Service</h3>
+                <p className="text-xs font-bold uppercase tracking-wider text-[var(--accent-red)]">Structural Repair</p>
+                <h3 className="text-lg font-bold text-[var(--accent-dark)]">Frame Straightening</h3>
                 <p className="text-sm leading-relaxed text-neutral-600">
-                  Oil changes, fluid checks, and preventive maintenance
+                  Precision frame alignment and structural damage repair
                 </p>
               </div>
             </div>
           </div>
 
-          {/* ADAS Calibration */}
+          {/* Bumper Repair */}
           <div className="relative overflow-hidden rounded-2xl bg-gradient-to-br from-red-50 to-white p-6 shadow-lg ring-1 ring-red-100 transition hover:shadow-xl">
             <div className="pointer-events-none absolute -right-8 -top-8 h-24 w-24 rounded-full bg-[var(--accent-red)]/10 blur-2xl" />
             <div className="relative space-y-4">
@@ -238,10 +238,10 @@ export default function Home() {
                 </svg>
               </div>
               <div className="space-y-2">
-                <p className="text-xs font-bold uppercase tracking-wider text-[var(--accent-red)]">Advanced Tech</p>
-                <h3 className="text-lg font-bold text-[var(--accent-dark)]">ADAS Calibration</h3>
+                <p className="text-xs font-bold uppercase tracking-wider text-[var(--accent-red)]">Bumper Services</p>
+                <h3 className="text-lg font-bold text-[var(--accent-dark)]">Bumper Repair & Replacement</h3>
                 <p className="text-sm leading-relaxed text-neutral-600">
-                  Safety system calibration and diagnostic scanning
+                  Expert bumper repair, refinishing, and replacement services
                 </p>
               </div>
             </div>

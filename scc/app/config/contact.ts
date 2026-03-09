@@ -21,9 +21,9 @@ export const contactInfo = {
     mapsUrl: "https://maps.google.com/?q=416+Lilac+St+Circle+Pines+MN+55014",
   },
   hours: {
-    weekday: "Mon-Fri: 8AM-5PM",
-    saturday: "Sat: 9AM-2PM",
-    fullDisplay: "Mon-Fri: 8AM-5PM, Sat: 9AM-2PM",
+    weekday: "Monday – Friday: 9AM-5PM",
+    saturday: "",
+    fullDisplay: "Monday – Friday: 9AM-5PM",
   },
   location: {
     city: "Circle Pines, MN",
