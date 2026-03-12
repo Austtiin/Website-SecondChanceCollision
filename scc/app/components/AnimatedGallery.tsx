@@ -41,7 +41,7 @@ export default function AnimatedGallery() {
           <div className="group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2">
             <div className="relative aspect-[4/3]">
               <Image
-                src="/Gallery/1000141922.jpg"
+                src="/Gallery/IMG_20260301_113707 (5).webp"
                 alt="Quality collision repair"
                 fill
                 className="object-cover transition-transform duration-500 group-hover:scale-110"
