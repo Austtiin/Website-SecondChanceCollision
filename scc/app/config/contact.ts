@@ -22,7 +22,6 @@ export const contactInfo = {
   },
   hours: {
     weekday: "Monday – Friday: 9AM-5PM",
-    saturday: "",
     fullDisplay: "Monday – Friday: 9AM-5PM",
   },
   location: {

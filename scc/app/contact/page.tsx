@@ -64,7 +64,7 @@ export default function ContactPage() {
                 <div className="space-y-1">
                   <p className="text-xs font-semibold uppercase tracking-wider text-neutral-500">Phone</p>
                   <p className="text-lg font-bold text-[var(--accent-dark)] group-hover:text-[var(--accent-red)]">(612) 913-6594</p>
-                  <p className="text-sm text-neutral-600">Mon-Fri: 8AM-5PM, Sat: 9AM-2PM</p>
+                  <p className="text-sm text-neutral-600">Monday-Friday: 9AM-5PM</p>
                 </div>
               </a>
 

@@ -110,8 +110,8 @@ export default function Home() {
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
                   </svg>
                 </div>
-                <p className="text-xs sm:text-sm font-semibold text-white">Open 6 Days a Week</p>
-                <p className="text-xs text-neutral-400">Mon-Sat for your convenience</p>
+                <p className="text-xs sm:text-sm font-semibold text-white">Open Monday-Friday</p>
+                <p className="text-xs text-neutral-400">5 days a week for your convenience</p>
               </div>
               <div className="text-center space-y-1.5 mx-auto max-w-xs sm:max-w-none col-span-2 sm:col-span-1 animate-in fade-in duration-400 delay-350">
                 <div className="inline-flex items-center justify-center h-12 w-12 rounded-full bg-[var(--accent-red)]/20 ring-1 ring-[var(--accent-red)]/30 mx-auto">

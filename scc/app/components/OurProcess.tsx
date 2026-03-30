@@ -3,7 +3,7 @@ export default function OurProcess() {
     {
       number: "01",
       title: "Schedule Your Repair",
-      description: "Contact us to book your appointment at a time that works for you. We're open 6 days a week for your convenience."
+      description: "Contact us to book your appointment at a time that works for you. We're open Monday-Friday for your convenience."
     },
     {
       number: "02",
