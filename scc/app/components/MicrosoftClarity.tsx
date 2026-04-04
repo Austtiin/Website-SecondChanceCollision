@@ -9,31 +9,39 @@ export default function MicrosoftClarity() {
   useEffect(() => {
     if (!CLARITY_PROJECT_ID) return;
 
-    // Only initialize Clarity if the user has accepted cookies
+    let initialized = false;
+
+    const initClarity = () => {
+      if (initialized) return;
+      initialized = true;
+      Clarity.init(CLARITY_PROJECT_ID);
+    };
+
+    // Initialize immediately if the user has already accepted cookies
     const consent = localStorage.getItem("cookie-consent");
     if (consent === "accepted") {
-      Clarity.init(CLARITY_PROJECT_ID);
+      initClarity();
     }
 
     // Listen for consent changes dispatched by CookieConsent component
     const handleConsentAccepted = () => {
-      Clarity.init(CLARITY_PROJECT_ID);
+      initClarity();
     };
 
     const handleConsentDeclined = () => {
       Clarity.consent(false);
     };
 
-    window.addEventListener("clarity:consent-accepted", handleConsentAccepted);
-    window.addEventListener("clarity:consent-declined", handleConsentDeclined);
+    window.addEventListener("analytics:consent-accepted", handleConsentAccepted);
+    window.addEventListener("analytics:consent-declined", handleConsentDeclined);
 
     return () => {
       window.removeEventListener(
-        "clarity:consent-accepted",
+        "analytics:consent-accepted",
         handleConsentAccepted
       );
       window.removeEventListener(
-        "clarity:consent-declined",
+        "analytics:consent-declined",
         handleConsentDeclined
       );
     };

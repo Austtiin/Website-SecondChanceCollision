@@ -28,8 +28,8 @@ export default function CookieConsent() {
       });
     }
 
-    // Notify Clarity
-    window.dispatchEvent(new Event('clarity:consent-accepted'));
+    // Notify analytics tools
+    window.dispatchEvent(new Event('analytics:consent-accepted'));
     
     setIsVisible(false);
     setTimeout(() => setShowBanner(false), 300);
@@ -47,8 +47,8 @@ export default function CookieConsent() {
       });
     }
 
-    // Notify Clarity
-    window.dispatchEvent(new Event('clarity:consent-declined'));
+    // Notify analytics tools
+    window.dispatchEvent(new Event('analytics:consent-declined'));
   };
 
   if (!showBanner) return null;
