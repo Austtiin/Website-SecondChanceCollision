@@ -27,6 +27,9 @@ export default function CookieConsent() {
         'analytics_storage': 'granted'
       });
     }
+
+    // Notify Clarity
+    window.dispatchEvent(new Event('clarity:consent-accepted'));
     
     setIsVisible(false);
     setTimeout(() => setShowBanner(false), 300);
@@ -43,6 +46,9 @@ export default function CookieConsent() {
         'analytics_storage': 'denied'
       });
     }
+
+    // Notify Clarity
+    window.dispatchEvent(new Event('clarity:consent-declined'));
   };
 
   if (!showBanner) return null;

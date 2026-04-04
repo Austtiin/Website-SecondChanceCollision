@@ -53,6 +53,28 @@ export default function PrivacyPolicy() {
         </section>
 
         <section className="space-y-4">
+          <h2 className="text-2xl font-bold text-[var(--accent-dark)]">Microsoft Clarity</h2>
+          <p className="leading-relaxed text-neutral-700">
+            We use Microsoft Clarity, a behavioral analytics tool provided by Microsoft, to understand how visitors interact with our website. Microsoft Clarity may collect information such as:
+          </p>
+          <ul className="list-disc space-y-2 pl-6 text-neutral-700">
+            <li>Mouse movements, clicks, and scrolling behavior (session replays)</li>
+            <li>Heatmaps showing where visitors click and how far they scroll</li>
+            <li>Pages visited and navigation paths through our site</li>
+            <li>Device type, browser, and approximate geographic location</li>
+          </ul>
+          <p className="leading-relaxed text-neutral-700">
+            <strong>We only enable Microsoft Clarity after you have accepted our cookie consent banner.</strong> Microsoft Clarity does not collect personally identifiable information such as your name, email address, or phone number. Data collected is used solely to improve our website experience.
+          </p>
+          <p className="leading-relaxed text-neutral-700">
+            For more information on how Microsoft handles data collected through Clarity, please review the{' '}
+            <a href="https://privacy.microsoft.com/privacystatement" target="_blank" rel="noopener noreferrer" className="text-[var(--accent-red)] hover:underline">
+              Microsoft Privacy Statement
+            </a>.
+          </p>
+        </section>
+
+        <section className="space-y-4">
           <h2 className="text-2xl font-bold text-[var(--accent-dark)]">How We Use Your Information</h2>
           <p className="leading-relaxed text-neutral-700">
             We use the information we collect to:
