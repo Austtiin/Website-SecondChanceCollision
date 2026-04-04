@@ -27,6 +27,9 @@ export default function CookieConsent() {
         'analytics_storage': 'granted'
       });
     }
+
+    // Notify analytics tools
+    window.dispatchEvent(new Event('analytics:consent-accepted'));
     
     setIsVisible(false);
     setTimeout(() => setShowBanner(false), 300);
@@ -43,6 +46,9 @@ export default function CookieConsent() {
         'analytics_storage': 'denied'
       });
     }
+
+    // Notify analytics tools
+    window.dispatchEvent(new Event('analytics:consent-declined'));
   };
 
   if (!showBanner) return null;

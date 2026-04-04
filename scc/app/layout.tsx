@@ -9,6 +9,7 @@ import Header from "./components/Header";
 import FooterContent from "./components/FooterContent";
 import FloatingElements from "./components/FloatingElements";
 import CookieConsent from "./components/CookieConsent";
+import MicrosoftClarity from "./components/MicrosoftClarity";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -127,6 +128,8 @@ export default function RootLayout({
           
           {/* Cookie Consent Banner */}
           <CookieConsent />
+          {/* Microsoft Clarity */}
+          <MicrosoftClarity />
           </div>
         </React.StrictMode>
       </body>
