@@ -1,19 +1,19 @@
 "use client";
 
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
 import Clarity from "@microsoft/clarity";
 
 const CLARITY_PROJECT_ID = process.env.NEXT_PUBLIC_CLARITY_PROJECT_ID ?? "";
 
 export default function MicrosoftClarity() {
+  const initialized = useRef(false);
+
   useEffect(() => {
     if (!CLARITY_PROJECT_ID) return;
 
-    let initialized = false;
-
     const initClarity = () => {
-      if (initialized) return;
-      initialized = true;
+      if (initialized.current) return;
+      initialized.current = true;
       Clarity.init(CLARITY_PROJECT_ID);
     };
 
