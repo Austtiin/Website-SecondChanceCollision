@@ -1,4 +1,6 @@
+import type { Metadata } from "next";
 import Image from "next/image";
+import Link from "next/link";
 import AnimatedGallery from "./components/AnimatedGallery";
 import OurWork from "./components/OurWork";
 import OurProcess from "./components/OurProcess";
@@ -6,6 +8,26 @@ import ScrollButton from "./components/ScrollButton";
 import ScrollReveal from "./components/ScrollReveal";
 import { EmailLink } from "./components/EmailConfirmationModal";
 import { getRandomProjects } from "./lib/getProjects";
+
+export const metadata: Metadata = {
+  title: "Auto Body Repair in Circle Pines and Blaine, MN",
+  description:
+    "Need auto body repair in MN? Second Chance Collision provides collision repair, bumper work, paint refinishing, and insurance-claim support for Circle Pines, Blaine, Anoka County, Ramsey County, and nearby cities.",
+  keywords: [
+    "auto body MN",
+    "auto body repair blaine",
+    "collision repair blaine mn",
+    "auto body shop circle pines",
+    "auto body repair anoka county",
+    "collision repair ramsey county",
+    "auto body shop coon rapids",
+    "auto body shop shoreview",
+    "car paint repair mn",
+  ],
+  alternates: {
+    canonical: "/",
+  },
+};
 
 export default function Home() {
   // Get 3 random projects on each page load
@@ -136,6 +158,26 @@ export default function Home() {
       <div className="relative">
 
       </div>
+
+      {/* Table of Contents / quick navigation */}
+      <section className="rounded-2xl bg-white p-6 shadow-sm ring-1 ring-black/5">
+        <div className="space-y-3">
+          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[var(--accent-red)]">
+            On this page
+          </p>
+          <h2 className="text-xl font-bold text-[var(--accent-dark)] sm:text-2xl">
+            Auto Body Repair Services for Circle Pines, Blaine, and Nearby Minnesota Cities and Counties
+          </h2>
+          <div className="flex flex-wrap gap-2 text-sm">
+            <a href="#services-section" className="rounded-full bg-neutral-100 px-3 py-1.5 font-medium text-neutral-700 transition hover:bg-neutral-200">Services</a>
+            <a href="#our-process-section" className="rounded-full bg-neutral-100 px-3 py-1.5 font-medium text-neutral-700 transition hover:bg-neutral-200">Our Process</a>
+            <a href="#gallery-section" className="rounded-full bg-neutral-100 px-3 py-1.5 font-medium text-neutral-700 transition hover:bg-neutral-200">Gallery</a>
+            <a href="#our-work-section" className="rounded-full bg-neutral-100 px-3 py-1.5 font-medium text-neutral-700 transition hover:bg-neutral-200">Recent Work</a>
+            <a href="#insurance-section" className="rounded-full bg-neutral-100 px-3 py-1.5 font-medium text-neutral-700 transition hover:bg-neutral-200">Insurance Help</a>
+            <a href="#estimate-section" className="rounded-full bg-neutral-100 px-3 py-1.5 font-medium text-neutral-700 transition hover:bg-neutral-200">Free Estimate</a>
+          </div>
+        </div>
+      </section>
 
       {/* Services overview - redesigned with black/red theme */}
       <ScrollReveal>
@@ -271,22 +313,58 @@ export default function Home() {
 
       {/* Our Process Section */}
       <ScrollReveal delay={100}>
+      <section id="our-process-section" className="scroll-mt-20">
       <OurProcess />
+      </section>
       </ScrollReveal>
 
       {/* Animated Gallery Showcase */}
       <ScrollReveal delay={150}>
+      <section id="gallery-section" className="scroll-mt-20">
       <AnimatedGallery />
+      </section>
       </ScrollReveal>
 
       {/* Our Work Section */}
       <ScrollReveal delay={200}>
+      <section id="our-work-section" className="scroll-mt-20">
       <OurWork projects={projects} />
+      </section>
+      </ScrollReveal>
+
+      {/* Local SEO service area content */}
+      <ScrollReveal delay={220}>
+      <section className="rounded-3xl bg-white p-8 shadow-lg ring-1 ring-black/5">
+        <div className="space-y-5">
+          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[var(--accent-red)]">
+            Local service area
+          </p>
+          <h2 className="text-2xl font-bold text-[var(--accent-dark)] sm:text-3xl">
+            Looking for Auto Body Repair in Blaine, MN or Nearby?
+          </h2>
+          <p className="text-neutral-700 leading-relaxed">
+            Second Chance Collision is based in Circle Pines and regularly serves drivers searching for auto body repair in Blaine, Lino Lakes, Lexington, Centerville, Coon Rapids, Mounds View, and Shoreview. We also work with customers across Anoka County and Ramsey County. If you are comparing auto body shops in the north metro, we focus on clear communication, quality refinishing, and repairs completed to pre-accident condition.
+          </p>
+          <p className="text-neutral-700 leading-relaxed">
+            Whether you need collision repair, bumper damage repair, paint matching, or structural work, our team can guide you through the process from estimate to final delivery. Start with our <Link href="/contact" className="font-semibold text-[var(--accent-red)] hover:underline">contact page</Link> or review common questions on the <Link href="/faq" className="font-semibold text-[var(--accent-red)] hover:underline">FAQ page</Link>.
+          </p>
+          <div className="flex flex-wrap gap-2 pt-1 text-xs sm:text-sm">
+            <span className="rounded-full bg-neutral-100 px-3 py-1 text-neutral-700">Circle Pines</span>
+            <span className="rounded-full bg-neutral-100 px-3 py-1 text-neutral-700">Blaine</span>
+            <span className="rounded-full bg-neutral-100 px-3 py-1 text-neutral-700">Lino Lakes</span>
+            <span className="rounded-full bg-neutral-100 px-3 py-1 text-neutral-700">Coon Rapids</span>
+            <span className="rounded-full bg-neutral-100 px-3 py-1 text-neutral-700">Mounds View</span>
+            <span className="rounded-full bg-neutral-100 px-3 py-1 text-neutral-700">Shoreview</span>
+            <span className="rounded-full bg-neutral-100 px-3 py-1 text-neutral-700">Anoka County</span>
+            <span className="rounded-full bg-neutral-100 px-3 py-1 text-neutral-700">Ramsey County</span>
+          </div>
+        </div>
+      </section>
       </ScrollReveal>
 
       {/* Insurance Assistance Section */}
       <ScrollReveal delay={250}>
-      <section className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-neutral-900 via-neutral-800 to-neutral-900 p-8 shadow-2xl">
+      <section id="insurance-section" className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-neutral-900 via-neutral-800 to-neutral-900 p-8 shadow-2xl scroll-mt-20">
         <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,_rgba(230,20,31,0.15),_transparent_50%)]" />
         <div className="relative z-10 text-center space-y-6 max-w-3xl mx-auto">
           <div className="inline-flex items-center justify-center h-16 w-16 rounded-full bg-[var(--accent-red)]/20 ring-2 ring-[var(--accent-red)]/30 mx-auto">
@@ -363,7 +441,7 @@ export default function Home() {
 
       {/* Estimate / CTA */}
       <ScrollReveal delay={150}>
-      <section className="relative overflow-hidden rounded-2xl bg-gradient-to-br from-[#12171b] via-[#1a2129] to-[#0f1419] p-6 text-sm text-neutral-100 shadow-xl md:flex md:items-center md:justify-between md:gap-6 md:p-7">
+      <section id="estimate-section" className="relative overflow-hidden rounded-2xl bg-gradient-to-br from-[#12171b] via-[#1a2129] to-[#0f1419] p-6 text-sm text-neutral-100 shadow-xl md:flex md:items-center md:justify-between md:gap-6 md:p-7 scroll-mt-20">
         {/* Subtle dot pattern */}
         <div className="pointer-events-none absolute inset-0 opacity-[0.03]" style={{backgroundImage: 'radial-gradient(circle, #e6141f 1px, transparent 1px)', backgroundSize: '20px 20px'}} />
         <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_20%_50%,_rgba(230,20,31,0.15),_transparent_50%)]" />

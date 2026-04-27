@@ -1,8 +1,6 @@
 import React from "react";
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
-import Image from "next/image";
-import Link from "next/link";
 import Script from "next/script";
 import "./globals.css";
 import Header from "./components/Header";
@@ -21,15 +19,112 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://secondchance-collision.com";
+
+const localBusinessJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "AutoBodyShop",
+  name: "Second Chance Collision",
+  url: siteUrl,
+  telephone: "+1-612-913-6594",
+  image: `${siteUrl}/SCC.png`,
+  address: {
+    "@type": "PostalAddress",
+    streetAddress: "416 Lilac St",
+    addressLocality: "Circle Pines",
+    addressRegion: "MN",
+    postalCode: "55014",
+    addressCountry: "US",
+  },
+  areaServed: [
+    "Circle Pines, MN",
+    "Blaine, MN",
+    "Lino Lakes, MN",
+    "Lexington, MN",
+    "Centerville, MN",
+    "Coon Rapids, MN",
+    "Mounds View, MN",
+    "Shoreview, MN",
+    "Anoka County, MN",
+    "Ramsey County, MN",
+    "North Metro Minneapolis, MN",
+  ],
+  openingHoursSpecification: [
+    {
+      "@type": "OpeningHoursSpecification",
+      dayOfWeek: [
+        "Monday",
+        "Tuesday",
+        "Wednesday",
+        "Thursday",
+        "Friday",
+      ],
+      opens: "09:00",
+      closes: "17:00",
+    },
+  ],
+  priceRange: "$$",
+};
+
 export const metadata: Metadata = {
-  title: "Second Chance Collision | Auto Body Repair - Circle Pines, MN",
+  metadataBase: new URL(siteUrl),
+  title: {
+    default: "Second Chance Collision | Auto Body Repair in Circle Pines, MN",
+    template: "%s | Second Chance Collision",
+  },
   description:
-    "Second Chance Collision is a locally owned auto body repair shop in Circle Pines, MN providing collision repair, paint, and refinishing services.",
-  keywords: "auto body repair, collision repair, auto paint, Circle Pines MN, car repair, vehicle refinishing, insurance claims",
+    "Second Chance Collision is a locally owned auto body repair shop in Circle Pines, MN serving Blaine and the north metro with collision repair, paint, dent, and refinishing services.",
+  keywords: [
+    "auto body repair MN",
+    "auto body repair Blaine",
+    "collision repair Circle Pines",
+    "auto body shop near Blaine MN",
+    "auto body shop Anoka County",
+    "collision repair Ramsey County",
+    "auto body repair Coon Rapids",
+    "auto body repair Shoreview",
+    "bumper repair Minnesota",
+    "paint and body shop Circle Pines",
+    "frame straightening MN",
+    "dent repair Blaine",
+  ],
+  alternates: {
+    canonical: "/",
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+      "max-video-preview": -1,
+    },
+  },
   openGraph: {
-    title: "Second Chance Collision | Auto Body Repair - Circle Pines, MN",
-    description: "Locally owned auto body repair shop in Circle Pines, MN providing quality collision repair, paint, and refinishing services.",
+    title: "Second Chance Collision | Auto Body Repair in Circle Pines, MN",
+    description:
+      "Trusted auto body and collision repair shop serving Circle Pines, Blaine, Anoka County, Ramsey County, and nearby Minnesota communities.",
+    url: "/",
+    siteName: "Second Chance Collision",
+    locale: "en_US",
     type: "website",
+    images: [
+      {
+        url: "/SCC.png",
+        width: 1200,
+        height: 630,
+        alt: "Second Chance Collision logo",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Second Chance Collision | Auto Body Repair in Circle Pines, MN",
+    description:
+      "Auto body and collision repair for Circle Pines, Blaine, Anoka County, Ramsey County, and the north metro.",
+    images: ["/SCC.png"],
   },
 };
 
@@ -82,6 +177,12 @@ export default function RootLayout({
             });
           `}
         </Script>
+        <Script
+          id="local-business-schema"
+          type="application/ld+json"
+          strategy="afterInteractive"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessJsonLd) }}
+        />
         <React.StrictMode>
           <div className="relative min-h-screen flex flex-col overflow-hidden bg-gradient-to-br from-neutral-50 via-white to-neutral-100 text-[var(--foreground)]">
             {/* Floating animated elements */}

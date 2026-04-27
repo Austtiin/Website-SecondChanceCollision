@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import Script from "next/script";
 
 interface FAQItem {
   question: string;
@@ -43,6 +44,19 @@ const faqs: FAQItem[] = [
   },
 ];
 
+const faqJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: faqs.map((faq) => ({
+    "@type": "Question",
+    name: faq.question,
+    acceptedAnswer: {
+      "@type": "Answer",
+      text: faq.answer,
+    },
+  })),
+};
+
 export default function FAQPage() {
   const [openIndex, setOpenIndex] = useState<number | null>(0);
 
@@ -52,6 +66,13 @@ export default function FAQPage() {
 
   return (
     <div className="space-y-12 py-12">
+      <Script
+        id="faq-schema"
+        type="application/ld+json"
+        strategy="afterInteractive"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
+      />
+
       {/* Page Header */}
       <section className="text-center space-y-4">
         <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[var(--accent-red)]">

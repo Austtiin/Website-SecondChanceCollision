@@ -161,6 +161,21 @@ export default function ContactPage() {
         </div>
       </section>
 
+      {/* Service area details */}
+      <section className="rounded-2xl bg-white p-6 shadow-lg ring-1 ring-black/5 sm:p-8">
+        <div className="space-y-4">
+          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[var(--accent-red)]">
+            Service Area
+          </p>
+          <h2 className="text-2xl font-bold text-[var(--accent-dark)]">
+            Proudly Serving Nearby Cities and Counties
+          </h2>
+          <p className="text-neutral-700 leading-relaxed">
+            We are based in Circle Pines and regularly serve drivers from Blaine, Lino Lakes, Lexington, Centerville, Coon Rapids, Mounds View, and Shoreview. Our shop supports customers across Anoka County and Ramsey County with collision repair, paint refinishing, bumper repair, and insurance claim coordination.
+          </p>
+        </div>
+      </section>
+
       {/* Back to home */}
       <section className="text-center">
         <Link

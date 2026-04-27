@@ -25,6 +25,9 @@ export default function FooterContent() {
             <p className="max-w-md text-base leading-relaxed text-neutral-300 text-center sm:text-left">
               Expert collision repair and auto body services in Circle Pines, MN. Quality workmanship, fair pricing, and exceptional customer service since day one.
             </p>
+            <p className="max-w-xl text-sm leading-relaxed text-neutral-400 text-center sm:text-left">
+              Serving Circle Pines, Blaine, Lino Lakes, Coon Rapids, Mounds View, Shoreview, Anoka County, and Ramsey County.
+            </p>
           </div>
 
           {/* Contact Info */}
