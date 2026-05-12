@@ -39,13 +39,13 @@ export default function Header() {
     <>
       {/* Backdrop */}
       <div
-        className="fixed inset-0 z-[9999] bg-black/50 backdrop-blur-sm transition-opacity md:hidden"
+        className="fixed inset-0 z-9999 bg-black/50 backdrop-blur-sm transition-opacity md:hidden"
         onClick={() => setMobileMenuOpen(false)}
       />
 
       {/* Slide-out menu */}
       <div
-        className="fixed right-0 top-0 z-[10000] h-full w-64 overflow-y-auto bg-white shadow-2xl md:hidden"
+        className="fixed right-0 top-0 z-10000 h-full w-64 overflow-y-auto bg-white shadow-2xl md:hidden"
         style={{
           animation: "slideInRight 0.3s ease-out",
         }}
@@ -53,7 +53,7 @@ export default function Header() {
         <div className="flex h-full flex-col">
           {/* Menu header */}
           <div className="flex items-center justify-between border-b border-neutral-200 p-4">
-            <span className="text-sm font-bold text-[var(--accent-dark)]">
+            <span className="text-sm font-bold text-accent-dark">
               Menu
             </span>
             <button
@@ -84,7 +84,7 @@ export default function Header() {
               onClick={() => setMobileMenuOpen(false)}
               className={`rounded-lg px-4 py-3 text-base font-medium transition hover:bg-neutral-100 ${
                 pathname === "/"
-                  ? "bg-red-50 text-[var(--accent-red)]"
+                  ? "bg-red-50 text-accent-red"
                   : "text-neutral-800"
               }`}
             >
@@ -95,7 +95,7 @@ export default function Header() {
               onClick={() => setMobileMenuOpen(false)}
               className={`rounded-lg px-4 py-3 text-base font-medium transition hover:bg-neutral-100 ${
                 pathname === "/faq"
-                  ? "bg-red-50 text-[var(--accent-red)]"
+                  ? "bg-red-50 text-accent-red"
                   : "text-neutral-800"
               }`}
             >
@@ -106,7 +106,7 @@ export default function Header() {
               onClick={() => setMobileMenuOpen(false)}
               className={`rounded-lg px-4 py-3 text-base font-medium transition hover:bg-neutral-100 ${
                 pathname === "/right-to-know"
-                  ? "bg-red-50 text-[var(--accent-red)]"
+                  ? "bg-red-50 text-accent-red"
                   : "text-neutral-800"
               }`}
             >
@@ -117,7 +117,7 @@ export default function Header() {
               onClick={() => setMobileMenuOpen(false)}
               className={`rounded-lg px-4 py-3 text-base font-medium transition hover:bg-neutral-100 ${
                 pathname === "/contact"
-                  ? "bg-red-50 text-[var(--accent-red)]"
+                  ? "bg-red-50 text-accent-red"
                   : "text-neutral-800"
               }`}
             >
@@ -133,7 +133,7 @@ export default function Header() {
             <div className="space-y-2 text-sm">
               <a
                 href="tel:612-913-6594"
-                className="flex items-center gap-2 text-[var(--accent-red)] hover:underline"
+                className="flex items-center gap-2 text-accent-red hover:underline"
               >
                 <svg
                   className="h-4 w-4"
@@ -151,7 +151,7 @@ export default function Header() {
                 (612) 913-6594
               </a>
               <EmailLink
-                className="flex items-center gap-2 text-[var(--accent-red)] hover:underline"
+                className="flex items-center gap-2 text-accent-red hover:underline"
               >
                 <svg
                   className="h-4 w-4"
@@ -188,14 +188,14 @@ export default function Header() {
   ) : null;
 
   return (
-    <header className="relative z-50 border-b border-b-[var(--accent-red)]/20 bg-white/80 shadow-sm backdrop-blur-md">
+    <header className="relative z-50 border-b border-b-(--accent-red)/20 bg-white/80 shadow-sm backdrop-blur-md">
       {/* Decorative gradient line */}
-      <div className="absolute inset-x-0 bottom-0 h-0.5 bg-gradient-to-r from-transparent via-[var(--accent-red)] to-transparent" />
+      <div className="absolute inset-x-0 bottom-0 h-0.5 bg-linear-to-r from-transparent via-accent-red to-transparent" />
       
       {/* Decorative elements */}
       <div className="pointer-events-none absolute inset-0 overflow-hidden opacity-30">
-        <div className="absolute -top-12 -right-12 h-32 w-32 rounded-full bg-[var(--accent-red)]/10 blur-2xl" />
-        <div className="absolute -top-8 -left-8 h-24 w-24 rounded-full bg-[var(--accent-red)]/5 blur-xl" />
+        <div className="absolute -top-12 -right-12 h-32 w-32 rounded-full bg-(--accent-red)/10 blur-2xl" />
+        <div className="absolute -top-8 -left-8 h-24 w-24 rounded-full bg-(--accent-red)/5 blur-xl" />
       </div>
       
       <div className="relative z-10 mx-auto flex max-w-7xl items-center justify-between px-4 py-3">
@@ -210,7 +210,7 @@ export default function Header() {
             />
           </div>
           <div className="hidden sm:flex flex-col">
-            <span className="text-sm font-bold tracking-wide text-[var(--accent-red)]">
+            <span className="text-sm font-bold tracking-wide text-accent-red">
               SECOND CHANCE COLLISION
             </span>
             <span className="text-xs text-neutral-600">
@@ -223,39 +223,39 @@ export default function Header() {
         <nav className="hidden items-center gap-6 text-sm font-medium text-neutral-800 md:flex">
           <Link
             href="/"
-            className={`hover:text-[var(--accent-red)] transition ${
-              pathname === "/" ? "text-[var(--accent-red)]" : ""
+            className={`hover:text-accent-red transition ${
+              pathname === "/" ? "text-accent-red" : ""
             }`}
           >
             Home
           </Link>
           <Link
             href="/faq"
-            className={`hover:text-[var(--accent-red)] transition ${
-              pathname === "/faq" ? "text-[var(--accent-red)]" : ""
+            className={`hover:text-accent-red transition ${
+              pathname === "/faq" ? "text-accent-red" : ""
             }`}
           >
             FAQ
           </Link>
           <Link
             href="/right-to-know"
-            className={`hover:text-[var(--accent-red)] transition ${
-              pathname === "/right-to-know" ? "text-[var(--accent-red)]" : ""
+            className={`hover:text-accent-red transition ${
+              pathname === "/right-to-know" ? "text-accent-red" : ""
             }`}
           >
             Your Rights
           </Link>
           <Link
             href="/contact"
-            className={`hover:text-[var(--accent-red)] transition ${
-              pathname === "/contact" ? "text-[var(--accent-red)]" : ""
+            className={`hover:text-accent-red transition ${
+              pathname === "/contact" ? "text-accent-red" : ""
             }`}
           >
             Contact
           </Link>
           <EmailLink
             subject="Appointment Request"
-            className="inline-flex items-center justify-center gap-2 rounded-full border-2 border-[var(--accent-red)] bg-white px-6 py-2.5 text-sm font-bold text-[var(--accent-red)] shadow-md transition hover:bg-[var(--accent-red)] hover:text-white hover:scale-105 hover:shadow-lg cursor-pointer"
+            className="inline-flex items-center justify-center gap-2 rounded-full border-2 border-accent-red bg-white px-6 py-2.5 text-sm font-bold text-accent-red shadow-md transition hover:bg-accent-red hover:text-white hover:scale-105 hover:shadow-lg cursor-pointer"
           >
             <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />

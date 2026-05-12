@@ -55,17 +55,17 @@ export default function CookieConsent() {
 
   return (
     <div
-      className={`fixed bottom-0 left-0 right-0 z-[9999] transition-all duration-500 ease-out ${
+      className={`fixed bottom-0 left-0 right-0 z-9999 transition-all duration-500 ease-out ${
         isVisible ? 'translate-y-0 opacity-100' : 'translate-y-full opacity-0'
       }`}
     >
-      <div className="bg-gradient-to-r from-neutral-900 via-[var(--accent-dark)] to-neutral-900 backdrop-blur-lg shadow-2xl border-t border-white/10">
+      <div className="bg-linear-to-r from-neutral-900 via-accent-dark to-neutral-900 backdrop-blur-lg shadow-2xl border-t border-white/10">
         <div className="mx-auto max-w-7xl px-4 py-4 sm:py-5">
           <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
             {/* Message */}
             <div className="flex-1 space-y-2">
               <div className="flex items-start gap-3">
-                <div className="flex-shrink-0 mt-0.5">
+                <div className="shrink-0 mt-0.5">
                   <svg className="h-5 w-5 text-white/90" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4" />
                   </svg>
@@ -76,7 +76,7 @@ export default function CookieConsent() {
                   </p>
                   <p className="text-xs sm:text-sm text-white/80 mt-1">
                     We use cookies and similar technologies to help personalize content and provide a better experience. By clicking Accept, you agree to this use. Learn more in our{' '}
-                    <a href="/privacy" className="underline hover:text-[var(--accent-red)] transition">
+                    <a href="/privacy" className="underline hover:text-accent-red transition">
                       Privacy Policy
                     </a>.
                   </p>
@@ -85,7 +85,7 @@ export default function CookieConsent() {
             </div>
 
             {/* Action Buttons */}
-            <div className="flex items-center gap-3 flex-shrink-0 w-full sm:w-auto">
+            <div className="flex items-center gap-3 shrink-0 w-full sm:w-auto">
               <button
                 onClick={handleDecline}
                 className="flex-1 sm:flex-none px-6 py-2.5 text-sm font-semibold text-white/90 hover:text-white border border-white/30 rounded-lg hover:bg-white/10 transition-all duration-200 cursor-pointer"
@@ -94,7 +94,7 @@ export default function CookieConsent() {
               </button>
               <button
                 onClick={handleAccept}
-                className="flex-1 sm:flex-none px-6 py-2.5 text-sm font-bold text-white bg-[var(--accent-red)] rounded-lg hover:bg-red-700 shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-200 cursor-pointer"
+                className="flex-1 sm:flex-none px-6 py-2.5 text-sm font-bold text-white bg-accent-red rounded-lg hover:bg-red-700 shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-200 cursor-pointer"
               >
                 Accept
               </button>

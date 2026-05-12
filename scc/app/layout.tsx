@@ -69,24 +69,51 @@ const localBusinessJsonLd = {
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
-    default: "Second Chance Collision | Auto Body Repair in Circle Pines, MN",
+    default: "Second Chance Collision | Auto Body & Collision Repair Near Me - Circle Pines, Blaine MN",
     template: "%s | Second Chance Collision",
   },
   description:
-    "Second Chance Collision is a locally owned auto body repair shop in Circle Pines, MN serving Blaine and the north metro with collision repair, paint, dent, and refinishing services.",
+    "Trusted auto body repair shop near you in Circle Pines, MN. We provide collision repair, bumper repair, paintless dent removal, frame straightening, hail damage repair, and paint refinishing for Blaine, Lino Lakes, Coon Rapids, Shoreview, Mounds View, Centerville, Lexington, and all of Anoka & Ramsey County. Insurance approved collision shop with certified technicians.",
   keywords: [
-    "auto body repair MN",
-    "auto body repair Blaine",
-    "collision repair Circle Pines",
-    "auto body shop near Blaine MN",
-    "auto body shop Anoka County",
-    "collision repair Ramsey County",
-    "auto body repair Coon Rapids",
-    "auto body repair Shoreview",
-    "bumper repair Minnesota",
-    "paint and body shop Circle Pines",
-    "frame straightening MN",
-    "dent repair Blaine",
+    // Core "near me" terms
+    "auto body repair near me",
+    "collision repair near me",
+    "body shop near me",
+    "auto paint near me",
+    "bumper repair near me",
+    "dent repair near me",
+    
+    // Primary locations
+    "auto body repair circle pines mn",
+    "collision repair blaine minnesota",
+    "body shop lino lakes",
+    "auto repair coon rapids",
+    "collision shop shoreview",
+    "auto body mounds view",
+    "body shop centerville mn",
+    "auto repair lexington mn",
+    
+    // Extended service area
+    "collision repair spring lake park",
+    "auto body fridley mn",
+    "body shop columbia heights",
+    "collision repair new brighton mn",
+    "auto body arden hills",
+    "body shop white bear lake",
+    "auto repair ham lake",
+    "collision shop hugo mn",
+    
+    // Services
+    "bumper repair and replacement",
+    "paintless dent removal",
+    "hail damage repair",
+    "frame straightening",
+    "auto paint matching",
+    "scratch and dent repair",
+    "fender replacement",
+    "door panel repair",
+    "hood repair",
+    "rear quarter panel repair",
   ],
   alternates: {
     canonical: "/",
@@ -103,9 +130,9 @@ export const metadata: Metadata = {
     },
   },
   openGraph: {
-    title: "Second Chance Collision | Auto Body Repair in Circle Pines, MN",
+    title: "Auto Body & Collision Repair Near Me | Circle Pines, Blaine MN - Second Chance Collision",
     description:
-      "Trusted auto body and collision repair shop serving Circle Pines, Blaine, Anoka County, Ramsey County, and nearby Minnesota communities.",
+      "Professional auto body repair, collision repair, bumper repair, dent removal & paint services serving Circle Pines, Blaine, Lino Lakes, Coon Rapids, Shoreview, Anoka County, and Ramsey County Minnesota. Insurance approved collision shop.",
     url: "/",
     siteName: "Second Chance Collision",
     locale: "en_US",
@@ -115,15 +142,15 @@ export const metadata: Metadata = {
         url: "/SCC.png",
         width: 1200,
         height: 630,
-        alt: "Second Chance Collision logo",
+        alt: "Second Chance Collision - Auto Body Repair Circle Pines MN",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Second Chance Collision | Auto Body Repair in Circle Pines, MN",
+    title: "Collision Repair Near Me | Auto Body Shop Circle Pines, Blaine MN",
     description:
-      "Auto body and collision repair for Circle Pines, Blaine, Anoka County, Ramsey County, and the north metro.",
+      "Expert collision repair, bumper repair, dent removal & auto paint services for Circle Pines, Blaine, Lino Lakes, Coon Rapids, Anoka & Ramsey County MN.",
     images: ["/SCC.png"],
   },
 };
@@ -184,7 +211,7 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessJsonLd) }}
         />
         <React.StrictMode>
-          <div className="relative min-h-screen flex flex-col overflow-hidden bg-gradient-to-br from-neutral-50 via-white to-neutral-100 text-[var(--foreground)]">
+          <div className="relative min-h-screen flex flex-col overflow-hidden bg-linear-to-br from-neutral-50 via-white to-neutral-100 text-foreground">
             {/* Floating animated elements */}
             <FloatingElements />
             
@@ -198,31 +225,31 @@ export default function RootLayout({
             
             {/* Decorative background shapes */}
             <div className="pointer-events-none fixed inset-0 overflow-hidden">
-              <div className="absolute -left-40 top-0 h-80 w-80 rounded-full bg-[var(--accent-red)]/[0.05] blur-3xl" />
-              <div className="absolute right-0 top-40 h-96 w-96 rounded-full bg-[var(--accent-dark)]/[0.03] blur-3xl" />
-              <div className="absolute bottom-0 left-1/4 h-72 w-72 rounded-full bg-[var(--accent-red)]/[0.06] blur-3xl" />
+              <div className="absolute -left-40 top-0 h-80 w-80 rounded-full bg-(--accent-red)/5 blur-3xl" />
+              <div className="absolute right-0 top-40 h-96 w-96 rounded-full bg-(--accent-dark)/3 blur-3xl" />
+              <div className="absolute bottom-0 left-1/4 h-72 w-72 rounded-full bg-(--accent-red)/6 blur-3xl" />
               <div className="absolute right-1/3 top-1/3 h-64 w-64 rounded-full bg-neutral-200/50 blur-2xl" />
-              <div className="absolute top-1/2 left-1/2 h-96 w-96 -translate-x-1/2 -translate-y-1/2 rounded-full bg-[var(--accent-red)]/[0.02] blur-3xl" />
+              <div className="absolute top-1/2 left-1/2 h-96 w-96 -translate-x-1/2 -translate-y-1/2 rounded-full bg-(--accent-red)/2 blur-3xl" />
             </div>
             
             {/* Diagonal accent stripes */}
             <div className="pointer-events-none fixed inset-0 opacity-[0.02]">
-              <div className="absolute -right-32 top-0 h-full w-1 rotate-12 bg-gradient-to-b from-[var(--accent-red)] to-transparent" />
-              <div className="absolute right-1/4 top-0 h-full w-0.5 rotate-12 bg-gradient-to-b from-[var(--accent-dark)] to-transparent" />
-              <div className="absolute left-1/3 top-0 h-full w-1 -rotate-12 bg-gradient-to-b from-[var(--accent-red)] to-transparent" />
-              <div className="absolute left-1/2 top-0 h-full w-2 rotate-6 bg-gradient-to-b from-neutral-300 to-transparent" />
+              <div className="absolute -right-32 top-0 h-full w-1 rotate-12 bg-linear-to-b from-accent-red to-transparent" />
+              <div className="absolute right-1/4 top-0 h-full w-0.5 rotate-12 bg-linear-to-b from-accent-dark to-transparent" />
+              <div className="absolute left-1/3 top-0 h-full w-1 -rotate-12 bg-linear-to-b from-accent-red to-transparent" />
+              <div className="absolute left-1/2 top-0 h-full w-2 rotate-6 bg-linear-to-b from-neutral-300 to-transparent" />
             </div>
             
             {/* Corner decorative elements */}
             <div className="pointer-events-none fixed inset-0 opacity-[0.04]">
-              <div className="absolute top-0 left-0 h-64 w-64 border-t-2 border-l-2 border-[var(--accent-red)] rounded-tl-3xl" />
-              <div className="absolute bottom-0 right-0 h-64 w-64 border-b-2 border-r-2 border-[var(--accent-red)] rounded-br-3xl" />
+              <div className="absolute top-0 left-0 h-64 w-64 border-t-2 border-l-2 border-accent-red rounded-tl-3xl" />
+              <div className="absolute bottom-0 right-0 h-64 w-64 border-b-2 border-r-2 border-accent-red rounded-br-3xl" />
             </div>
             
           <Header />
 
           <main className="relative flex-1">
-            <div className="mx-auto max-w-7xl px-4 pt-[5px] pb-10">{children}</div>
+            <div className="mx-auto max-w-7xl px-4 pt-1.25 pb-10">{children}</div>
           </main>
 
           <FooterContent />

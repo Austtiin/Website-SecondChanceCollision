@@ -6,8 +6,8 @@ import { EmailLink } from "./EmailConfirmationModal";
 
 export default function FooterContent() {
   return (
-    <footer className="relative border-t border-black/5 bg-gradient-to-br from-[#0f1419] via-[#12171b] to-[#1a2129] text-sm text-neutral-200">
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_50%,_rgba(230,20,31,0.08),_transparent_50%)]" />
+    <footer className="relative border-t border-black/5 bg-linear-to-br from-[#0f1419] via-[#12171b] to-[#1a2129] text-sm text-neutral-200">
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_50%,rgba(230,20,31,0.08),transparent_50%)]" />
       <div className="relative mx-auto max-w-7xl px-4 py-12">
         <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
           {/* Logo and tagline */}
