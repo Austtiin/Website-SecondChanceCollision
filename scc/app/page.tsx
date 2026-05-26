@@ -10,9 +10,15 @@ import { EmailLink } from "./components/EmailConfirmationModal";
 import { getRandomProjects } from "./lib/getProjects";
 
 export const metadata: Metadata = {
+<<<<<<< Updated upstream
   title: "Auto Body Repair Near Me | Collision Repair Shop Circle Pines, Blaine MN",
   description:
     "Looking for collision repair near me? Second Chance Collision offers expert auto body repair, bumper repair, paint booth services, dent removal, frame straightening, and hail damage repair in Circle Pines, Blaine, Lino Lakes, Coon Rapids, Shoreview, Mounds View, Centerville, Lexington, Spring Lake Park, Fridley, Columbia Heights, New Brighton, Arden Hills, and throughout Anoka County & Ramsey County MN. Insurance approved collision shop near you.",
+=======
+  title: "Collision Repair in Circle Pines, Blaine, and Lino Lakes, MN",
+  description:
+    "Need collision repair in Circle Pines, Blaine, or Lino Lakes, MN? Second Chance Collision provides car collision repair, bumper-to-bumper repair, paint refinishing, and insurance-claim support across Anoka and Ramsey counties.",
+>>>>>>> Stashed changes
   keywords: [
     // "Near Me" searches
     "auto body repair near me",
@@ -216,6 +222,34 @@ export default function Home() {
         </div>
       </section>
       
+      <section className="rounded-2xl bg-white p-6 shadow-sm ring-1 ring-black/5">
+        <div className="space-y-3">
+          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[var(--accent-red)]">
+            Local collision pages
+          </p>
+          <h2 className="text-xl font-bold text-[var(--accent-dark)] sm:text-2xl">
+            Find Collision Repair Near You in the North Metro
+          </h2>
+          <p className="text-sm text-neutral-700 sm:text-base">
+            Looking for a trusted collision repair center near Blaine or Ramsey County? Use the guides below to see service details, insurance help, and how to get your estimate quickly.
+          </p>
+          <div className="flex flex-wrap gap-2 text-sm">
+            <Link href="/collision-repair-blaine-mn" className="rounded-full bg-neutral-100 px-3 py-1.5 font-medium text-neutral-700 transition hover:bg-neutral-200">
+              Collision Repair in Blaine, MN
+            </Link>
+            <Link href="/collision-repair-lino-lakes-mn" className="rounded-full bg-neutral-100 px-3 py-1.5 font-medium text-neutral-700 transition hover:bg-neutral-200">
+              Collision Repair in Lino Lakes, MN
+            </Link>
+            <Link href="/collision-repair-ramsey-county-mn" className="rounded-full bg-neutral-100 px-3 py-1.5 font-medium text-neutral-700 transition hover:bg-neutral-200">
+              Collision Repair in Ramsey County, MN
+            </Link>
+            <Link href="/bumper-to-bumper-collision-repair" className="rounded-full bg-neutral-100 px-3 py-1.5 font-medium text-neutral-700 transition hover:bg-neutral-200">
+              Bumper-to-Bumper Collision Repair
+            </Link>
+          </div>
+        </div>
+      </section>
+
       {/* Spacer for next section */}
       <div className="relative">
 

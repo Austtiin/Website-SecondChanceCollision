@@ -25,9 +25,13 @@ const localBusinessJsonLd = {
   "@context": "https://schema.org",
   "@type": "AutoBodyShop",
   name: "Second Chance Collision",
+  "@id": `${siteUrl}/#autobodyshop`,
   url: siteUrl,
   telephone: "+1-612-913-6594",
-  image: `${siteUrl}/SCC.png`,
+  image: [
+    `${siteUrl}/SCC.png`,
+    `${siteUrl}/Gallery/IMG_20260222_165739.jpg`,
+  ],
   address: {
     "@type": "PostalAddress",
     streetAddress: "416 Lilac St",
@@ -36,6 +40,12 @@ const localBusinessJsonLd = {
     postalCode: "55014",
     addressCountry: "US",
   },
+  geo: {
+    "@type": "GeoCoordinates",
+    latitude: 45.16053,
+    longitude: -93.14396,
+  },
+  hasMap: "https://maps.google.com/?q=416+Lilac+St+Circle+Pines+MN+55014",
   areaServed: [
     "Circle Pines, MN",
     "Blaine, MN",
@@ -48,6 +58,9 @@ const localBusinessJsonLd = {
     "Anoka County, MN",
     "Ramsey County, MN",
     "North Metro Minneapolis, MN",
+  ],
+  sameAs: [
+    "https://github.com/Austtiin",
   ],
   openingHoursSpecification: [
     {

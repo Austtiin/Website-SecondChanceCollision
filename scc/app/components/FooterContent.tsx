@@ -54,6 +54,23 @@ export default function FooterContent() {
               <p><span className="font-medium text-white">Monday – Friday:</span> 9:00 AM - 5:00 PM</p>
               <p><span className="font-medium text-white">Sat-Sun:</span> Closed</p>
             </div>
+            <div className="pt-4">
+              <h3 className="text-base font-bold uppercase tracking-wider text-white">Service Areas</h3>
+              <div className="mt-2 flex flex-col gap-1.5 text-sm">
+                <Link href="/collision-repair-blaine-mn" className="text-neutral-300 hover:text-white transition">
+                  Collision Repair in Blaine, MN
+                </Link>
+                <Link href="/collision-repair-lino-lakes-mn" className="text-neutral-300 hover:text-white transition">
+                  Collision Repair in Lino Lakes, MN
+                </Link>
+                <Link href="/collision-repair-ramsey-county-mn" className="text-neutral-300 hover:text-white transition">
+                  Collision Repair in Ramsey County, MN
+                </Link>
+                <Link href="/bumper-to-bumper-collision-repair" className="text-neutral-300 hover:text-white transition">
+                  Bumper-to-Bumper Collision Repair
+                </Link>
+              </div>
+            </div>
           </div>
         </div>
 

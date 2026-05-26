@@ -1,14 +1,16 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Contact Auto Body Shop in Circle Pines, MN",
+  title: "Contact Collision Repair Shop in Circle Pines, MN",
   description:
-    "Contact Second Chance Collision for collision and auto body repair in Circle Pines, MN, near Blaine, serving Anoka County and Ramsey County. Call for an estimate or visit our shop.",
+    "Contact Second Chance Collision for car collision repair in Circle Pines, Blaine, and Lino Lakes, MN. We serve Anoka and Ramsey County drivers with estimates and insurance support.",
   keywords: [
-    "auto body shop contact",
+    "collision repair contact",
     "collision repair estimate Circle Pines",
-    "auto body repair near Blaine MN",
-    "auto body shop Anoka County",
+    "car collision repairs blaine mn",
+    "collision repair lino lakes mn",
+    "collision center near me",
+    "collision companies near me",
     "collision repair Ramsey County",
   ],
   alternates: {
