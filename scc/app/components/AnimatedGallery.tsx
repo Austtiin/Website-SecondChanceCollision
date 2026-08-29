@@ -25,7 +25,7 @@ export default function AnimatedGallery() {
           <div className="group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2">
             <div className="relative aspect-4/3">
               <Image
-                src="/Gallery/1000132602.jpg"
+                src="/Gallery/1000132602.webp"
                 alt="Professional auto body work"
                 fill
                 className="object-cover transition-transform duration-500 group-hover:scale-110"
@@ -57,7 +57,7 @@ export default function AnimatedGallery() {
           <div className="group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2">
             <div className="relative aspect-4/3">
               <Image
-                src="/Gallery/1000144912.jpg"
+                src="/Gallery/1000144912.webp"
                 alt="Precision bodywork"
                 fill
                 className="object-cover transition-transform duration-500 group-hover:scale-110"
@@ -73,7 +73,7 @@ export default function AnimatedGallery() {
           <div className="group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2">
             <div className="relative aspect-4/3">
               <Image
-                src="/Gallery/1000104629.jpg"
+                src="/Gallery/1000104629.webp"
                 alt="High-end vehicle repair"
                 fill
                 className="object-cover transition-transform duration-500 group-hover:scale-110"

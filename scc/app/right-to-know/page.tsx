@@ -20,10 +20,8 @@ export default function RightToKnowPage() {
       {/* Main Content */}
       <section className="max-w-4xl mx-auto space-y-8">
         {/* Your Choice Matters */}
-        <div className="relative overflow-hidden rounded-2xl bg-white shadow-lg ring-1 ring-black/5 p-6 sm:p-8">
-          <div className="pointer-events-none absolute -right-12 -top-12 h-32 w-32 rounded-full bg-[var(--accent-red)]/10 blur-3xl" />
-          
-          <div className="relative z-10 space-y-4">
+        <div className="rounded-2xl bg-white shadow-lg ring-1 ring-black/5 p-6 sm:p-8">
+          <div className="space-y-4">
             <div className="flex items-start gap-3">
               <div className="flex-shrink-0 rounded-full bg-[var(--accent-red)] p-2">
                 <svg className="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -69,13 +67,17 @@ export default function RightToKnowPage() {
               {/* Tactic 1 */}
               <div className="bg-white rounded-xl p-5 shadow-sm">
                 <div className="flex items-start gap-3">
-                  <span className="text-2xl">❌</span>
+                  <svg className="h-6 w-6 text-[var(--accent-red)] flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                  </svg>
                   <div className="space-y-2 flex-1">
                     <p className="font-bold text-neutral-800">
                       &ldquo;We cannot guarantee the work performed at that shop.&rdquo;
                     </p>
                     <div className="flex items-start gap-2">
-                      <span className="text-2xl">✅</span>
+                      <svg className="h-6 w-6 text-green-600 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                      </svg>
                       <p className="text-neutral-700">
                         <strong>The Truth:</strong> Second Chance Collision offers a lifetime warranty on all repairs.
                       </p>
@@ -87,13 +89,17 @@ export default function RightToKnowPage() {
               {/* Tactic 2 */}
               <div className="bg-white rounded-xl p-5 shadow-sm">
                 <div className="flex items-start gap-3">
-                  <span className="text-2xl">❌</span>
+                  <svg className="h-6 w-6 text-[var(--accent-red)] flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                  </svg>
                   <div className="space-y-2 flex-1">
                     <p className="font-bold text-neutral-800">
                       &ldquo;We cannot find that shop on our list.&rdquo;
                     </p>
                     <div className="flex items-start gap-2">
-                      <span className="text-2xl">✅</span>
+                      <svg className="h-6 w-6 text-green-600 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                      </svg>
                       <p className="text-neutral-700">
                         <strong>The Truth:</strong> You have the legal right to choose any licensed repair shop, 
                         regardless of their &ldquo;preferred&rdquo; list.
@@ -106,13 +112,17 @@ export default function RightToKnowPage() {
               {/* Tactic 3 */}
               <div className="bg-white rounded-xl p-5 shadow-sm">
                 <div className="flex items-start gap-3">
-                  <span className="text-2xl">❌</span>
+                  <svg className="h-6 w-6 text-[var(--accent-red)] flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                  </svg>
                   <div className="space-y-2 flex-1">
                     <p className="font-bold text-neutral-800">
                       &ldquo;Your repairs may be delayed up to a week by not choosing a preferred shop.&rdquo;
                     </p>
                     <div className="flex items-start gap-2">
-                      <span className="text-2xl">✅</span>
+                      <svg className="h-6 w-6 text-green-600 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                      </svg>
                       <p className="text-neutral-700">
                         <strong>The Truth:</strong> We work efficiently with all insurance companies and provide 
                         timely repairs regardless of your insurer&apos;s preferences.
@@ -125,13 +135,17 @@ export default function RightToKnowPage() {
               {/* Tactic 4 */}
               <div className="bg-white rounded-xl p-5 shadow-sm">
                 <div className="flex items-start gap-3">
-                  <span className="text-2xl">❌</span>
+                  <svg className="h-6 w-6 text-[var(--accent-red)] flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                  </svg>
                   <div className="space-y-2 flex-1">
                     <p className="font-bold text-neutral-800">
                       &ldquo;You may incur additional charges by choosing your own shop.&rdquo;
                     </p>
                     <div className="flex items-start gap-2">
-                      <span className="text-2xl">✅</span>
+                      <svg className="h-6 w-6 text-green-600 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                      </svg>
                       <p className="text-neutral-700">
                         <strong>The Truth:</strong> Insurance companies must pay for quality repairs. 
                         You won&apos;t face extra charges for choosing the shop you trust.
@@ -261,12 +275,8 @@ export default function RightToKnowPage() {
       </section>
 
       {/* CTA Section */}
-      <section className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-[var(--accent-red)] via-red-600 to-[#c00a17] p-8 shadow-2xl sm:p-12 max-w-4xl mx-auto">
-        <div className="pointer-events-none absolute inset-0" style={{
-          backgroundImage: 'radial-gradient(circle at 30% 20%, rgba(255,255,255,0.1), transparent 50%)',
-        }} />
-
-        <div className="relative z-10 text-center space-y-6">
+      <section className="rounded-2xl bg-[var(--accent-red)] p-8 shadow-xl sm:p-12 max-w-4xl mx-auto">
+        <div className="text-center space-y-6">
           <div className="space-y-3">
             <h3 className="text-2xl sm:text-3xl font-bold text-white">
               We&apos;ll Fight for Your Rights
@@ -280,7 +290,7 @@ export default function RightToKnowPage() {
           <div className="flex flex-wrap items-center justify-center gap-3 sm:gap-4">
             <a
               href="tel:612-913-6594"
-              className="inline-flex items-center justify-center gap-2 rounded-full bg-white px-6 py-3 sm:px-8 sm:py-4 text-sm sm:text-base font-bold text-[var(--accent-red)] shadow-xl transition hover:bg-neutral-100 hover:scale-105 cursor-pointer"
+              className="inline-flex items-center justify-center gap-2 rounded-full bg-white px-6 py-3 sm:px-8 sm:py-4 text-sm sm:text-base font-bold text-[var(--accent-red)] shadow-md transition hover:bg-neutral-100 cursor-pointer"
             >
               <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
@@ -289,7 +299,7 @@ export default function RightToKnowPage() {
             </a>
             <Link
               href="/contact"
-              className="inline-flex items-center justify-center gap-2 rounded-full border-2 border-white bg-transparent px-6 py-3 sm:px-8 sm:py-4 text-sm sm:text-base font-bold text-white shadow-xl transition hover:bg-white/10 hover:scale-105 cursor-pointer"
+              className="inline-flex items-center justify-center gap-2 rounded-full border-2 border-white bg-transparent px-6 py-3 sm:px-8 sm:py-4 text-sm sm:text-base font-bold text-white shadow-md transition hover:bg-white/10 cursor-pointer"
             >
               <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />

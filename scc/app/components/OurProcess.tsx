@@ -8,7 +8,7 @@ export default function OurProcess() {
     {
       number: "02",
       title: "Honest & Upfront Estimate",
-      description: "We provide transparent pricing with no hidden fees. Work directly with us or through your insurance provider."
+      description: "We provide transparent pricing with no hidden fees. Working with insurance? We deal directly with your carrier and adjuster so you don't have to."
     },
     {
       number: "03",
@@ -18,21 +18,7 @@ export default function OurProcess() {
   ];
 
   return (
-    <section className="relative py-16 bg-neutral-900 overflow-hidden">
-      {/* Decorative Elements */}
-      <div className="pointer-events-none absolute inset-0">
-        {/* Red accent shapes */}
-        <div className="absolute top-1/4 -left-20 h-96 w-96 rounded-full bg-(--accent-red)/10 blur-3xl" />
-        <div className="absolute bottom-1/4 -right-20 h-96 w-96 rounded-full bg-(--accent-red)/10 blur-3xl" />
-        
-        {/* Grid pattern overlay */}
-        <div className="absolute inset-0 opacity-[0.02]" style={{backgroundImage: 'radial-gradient(circle, #e6141f 1px, transparent 1px)', backgroundSize: '30px 30px'}} />
-        
-        {/* Corner accents */}
-        <div className="absolute top-0 left-1/4 h-px w-32 bg-linear-to-r from-transparent via-(--accent-red)/30 to-transparent" />
-        <div className="absolute bottom-0 right-1/4 h-px w-32 bg-linear-to-r from-transparent via-(--accent-red)/30 to-transparent" />
-      </div>
-      
+    <section className="relative py-16 bg-neutral-900">
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-4">
@@ -45,17 +31,11 @@ export default function OurProcess() {
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {steps.map((step, index) => (
-            <div 
+            <div
               key={index}
-              className="group relative bg-linear-to-br from-neutral-800 to-neutral-900 backdrop-blur-sm border border-white/20 rounded-2xl p-8 hover:border-(--accent-red)/50 transition-all duration-300 shadow-[0_8px_30px_rgb(0,0,0,0.4)] hover:shadow-[0_15px_40px_rgb(230,20,31,0.3)] hover:-translate-y-2 hover:scale-[1.02]"
-              style={{
-                transformStyle: 'preserve-3d',
-              }}
+              className="relative bg-neutral-800 border border-white/10 rounded-2xl p-8 transition hover:border-(--accent-red)/40"
             >
-              {/* Subtle inner glow */}
-              <div className="absolute inset-0 rounded-2xl bg-linear-to-br from-(--accent-red)/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-              
-              <div className="absolute -top-6 left-8 bg-linear-to-br from-accent-red to-red-700 text-white font-bold text-2xl rounded-full h-12 w-12 flex items-center justify-center shadow-lg ring-2 ring-white/10">
+              <div className="absolute -top-6 left-8 bg-accent-red text-white font-bold text-2xl rounded-full h-12 w-12 flex items-center justify-center shadow-lg">
                 {step.number}
               </div>
               <div className="relative mt-4">

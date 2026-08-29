@@ -86,7 +86,7 @@ export default function BumperToBumperCollisionRepairPage() {
 
       <section className="rounded-2xl bg-neutral-50 p-6 ring-1 ring-black/5">
         <p className="text-sm text-neutral-700">
-          See also: <Link href="/collision-repair-blaine-mn" className="font-semibold text-[var(--accent-red)] hover:underline">Collision Repair in Blaine</Link>, <Link href="/collision-repair-lino-lakes-mn" className="font-semibold text-[var(--accent-red)] hover:underline">Collision Repair in Lino Lakes</Link>, and <Link href="/collision-repair-ramsey-county-mn" className="font-semibold text-[var(--accent-red)] hover:underline">Collision Repair in Ramsey County</Link>.
+          See also: <Link href="/collision-repair-blaine-mn" className="font-semibold text-[var(--accent-red)] hover:underline">Collision Repair in Blaine</Link>, <Link href="/collision-repair-lino-lakes-mn" className="font-semibold text-[var(--accent-red)] hover:underline">Collision Repair in Lino Lakes</Link>, <Link href="/collision-repair-ramsey-county-mn" className="font-semibold text-[var(--accent-red)] hover:underline">Collision Repair in Ramsey County</Link>, and <Link href="/insurance-claims" className="font-semibold text-[var(--accent-red)] hover:underline">Insurance Claims Help</Link>.
         </p>
       </section>
     </div>

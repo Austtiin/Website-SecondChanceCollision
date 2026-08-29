@@ -125,7 +125,7 @@ export default function OurWork({ projects }: OurWorkProps) {
               </div>
               <div className="relative h-6 w-12 sm:h-8 sm:w-16">
                 <Image
-                  src="/SCC.png"
+                  src="/SCC.webp"
                   alt="Second Chance Collision"
                   fill
                   className="object-contain"
@@ -172,7 +172,7 @@ export default function OurWork({ projects }: OurWorkProps) {
                     <div className="absolute bottom-3 right-3 opacity-90 pointer-events-none">
                       <div className="relative h-16 w-32 sm:h-20 sm:w-40">
                         <Image
-                          src="/SCC.png"
+                          src="/SCC.webp"
                           alt="SCC"
                           fill
                           className="object-contain"
@@ -264,7 +264,7 @@ export default function OurWork({ projects }: OurWorkProps) {
           <div className="absolute bottom-4 right-4 opacity-90 pointer-events-none">
             <div className="relative h-20 w-40">
               <Image
-                src="/SCC.png"
+                src="/SCC.webp"
                 alt="SCC"
                 fill
                 className="object-contain"

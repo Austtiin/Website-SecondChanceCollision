@@ -91,6 +91,17 @@ export default function Header() {
               Home
             </Link>
             <Link
+              href="/insurance-claims"
+              onClick={() => setMobileMenuOpen(false)}
+              className={`rounded-lg px-4 py-3 text-base font-medium transition hover:bg-neutral-100 ${
+                pathname === "/insurance-claims"
+                  ? "bg-red-50 text-accent-red"
+                  : "text-neutral-800"
+              }`}
+            >
+              Insurance
+            </Link>
+            <Link
               href="/faq"
               onClick={() => setMobileMenuOpen(false)}
               className={`rounded-lg px-4 py-3 text-base font-medium transition hover:bg-neutral-100 ${
@@ -188,21 +199,12 @@ export default function Header() {
   ) : null;
 
   return (
-    <header className="relative z-50 border-b border-b-(--accent-red)/20 bg-white/80 shadow-sm backdrop-blur-md">
-      {/* Decorative gradient line */}
-      <div className="absolute inset-x-0 bottom-0 h-0.5 bg-linear-to-r from-transparent via-accent-red to-transparent" />
-      
-      {/* Decorative elements */}
-      <div className="pointer-events-none absolute inset-0 overflow-hidden opacity-30">
-        <div className="absolute -top-12 -right-12 h-32 w-32 rounded-full bg-(--accent-red)/10 blur-2xl" />
-        <div className="absolute -top-8 -left-8 h-24 w-24 rounded-full bg-(--accent-red)/5 blur-xl" />
-      </div>
-      
-      <div className="relative z-10 mx-auto flex max-w-7xl items-center justify-between px-4 py-3">
+    <header className="sticky top-0 z-50 border-b border-neutral-200 bg-white shadow-sm">
+      <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-3">
         <Link href="/" className="flex items-center gap-2 sm:gap-4">
           <div className="relative h-16 w-32 sm:h-20 sm:w-40 md:h-24 md:w-48 lg:h-28 lg:w-56 overflow-hidden">
             <Image
-              src="/SCC.png"
+              src="/SCC.webp"
               alt="Second Chance Collision logo"
               fill
               className="object-contain object-left"
@@ -230,6 +232,14 @@ export default function Header() {
             Home
           </Link>
           <Link
+            href="/insurance-claims"
+            className={`hover:text-accent-red transition ${
+              pathname === "/insurance-claims" ? "text-accent-red" : ""
+            }`}
+          >
+            Insurance
+          </Link>
+          <Link
             href="/faq"
             className={`hover:text-accent-red transition ${
               pathname === "/faq" ? "text-accent-red" : ""
@@ -255,7 +265,7 @@ export default function Header() {
           </Link>
           <EmailLink
             subject="Appointment Request"
-            className="inline-flex items-center justify-center gap-2 rounded-full border-2 border-accent-red bg-white px-6 py-2.5 text-sm font-bold text-accent-red shadow-md transition hover:bg-accent-red hover:text-white hover:scale-105 hover:shadow-lg cursor-pointer"
+            className="inline-flex items-center justify-center gap-2 rounded-full border-2 border-accent-red bg-white px-6 py-2.5 text-sm font-bold text-accent-red shadow-md transition hover:bg-accent-red hover:text-white hover:shadow-lg cursor-pointer"
           >
             <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />

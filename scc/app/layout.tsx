@@ -5,7 +5,6 @@ import Script from "next/script";
 import "./globals.css";
 import Header from "./components/Header";
 import FooterContent from "./components/FooterContent";
-import FloatingElements from "./components/FloatingElements";
 import CookieConsent from "./components/CookieConsent";
 import MicrosoftClarity from "./components/MicrosoftClarity";
 
@@ -30,7 +29,7 @@ const localBusinessJsonLd = {
   telephone: "+1-612-913-6594",
   image: [
     `${siteUrl}/SCC.png`,
-    `${siteUrl}/Gallery/IMG_20260222_165739.jpg`,
+    `${siteUrl}/Gallery/IMG_20260222_165739.webp`,
   ],
   address: {
     "@type": "PostalAddress",
@@ -82,11 +81,11 @@ const localBusinessJsonLd = {
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
-    default: "Second Chance Collision | Auto Body & Collision Repair Near Me - Circle Pines, Blaine MN",
+    default: "Second Chance Collision | Auto Body Repair, Circle Pines MN",
     template: "%s | Second Chance Collision",
   },
   description:
-    "Trusted auto body repair shop near you in Circle Pines, MN. We provide collision repair, bumper repair, paintless dent removal, frame straightening, hail damage repair, and paint refinishing for Blaine, Lino Lakes, Coon Rapids, Shoreview, Mounds View, Centerville, Lexington, and all of Anoka & Ramsey County. Insurance approved collision shop with certified technicians.",
+    "Insurance-approved auto body shop in Circle Pines, MN. Collision repair, bumper repair, dent removal & paint services for Blaine, Lino Lakes & the North Metro.",
   keywords: [
     // Core "near me" terms
     "auto body repair near me",
@@ -143,9 +142,9 @@ export const metadata: Metadata = {
     },
   },
   openGraph: {
-    title: "Auto Body & Collision Repair Near Me | Circle Pines, Blaine MN - Second Chance Collision",
+    title: "Second Chance Collision | Auto Body Repair, Circle Pines MN",
     description:
-      "Professional auto body repair, collision repair, bumper repair, dent removal & paint services serving Circle Pines, Blaine, Lino Lakes, Coon Rapids, Shoreview, Anoka County, and Ramsey County Minnesota. Insurance approved collision shop.",
+      "Collision repair, bumper repair, dent removal & paint services for Circle Pines, Blaine, Lino Lakes & the North Metro. Insurance-approved shop.",
     url: "/",
     siteName: "Second Chance Collision",
     locale: "en_US",
@@ -161,9 +160,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Collision Repair Near Me | Auto Body Shop Circle Pines, Blaine MN",
+    title: "Second Chance Collision | Auto Body Repair, Circle Pines MN",
     description:
-      "Expert collision repair, bumper repair, dent removal & auto paint services for Circle Pines, Blaine, Lino Lakes, Coon Rapids, Anoka & Ramsey County MN.",
+      "Collision repair, bumper repair, dent removal & paint services for Circle Pines, Blaine, Lino Lakes & the North Metro.",
     images: ["/SCC.png"],
   },
 };
@@ -224,41 +223,7 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessJsonLd) }}
         />
         <React.StrictMode>
-          <div className="relative min-h-screen flex flex-col overflow-hidden bg-linear-to-br from-neutral-50 via-white to-neutral-100 text-foreground">
-            {/* Floating animated elements */}
-            <FloatingElements />
-            
-            {/* Modern grid pattern background */}
-            <div className="pointer-events-none fixed inset-0 opacity-[0.03]">
-              <div className="absolute inset-0" style={{
-                backgroundImage: 'linear-gradient(to right, #e6141f 1px, transparent 1px), linear-gradient(to bottom, #e6141f 1px, transparent 1px)',
-                backgroundSize: '80px 80px'
-              }} />
-            </div>
-            
-            {/* Decorative background shapes */}
-            <div className="pointer-events-none fixed inset-0 overflow-hidden">
-              <div className="absolute -left-40 top-0 h-80 w-80 rounded-full bg-(--accent-red)/5 blur-3xl" />
-              <div className="absolute right-0 top-40 h-96 w-96 rounded-full bg-(--accent-dark)/3 blur-3xl" />
-              <div className="absolute bottom-0 left-1/4 h-72 w-72 rounded-full bg-(--accent-red)/6 blur-3xl" />
-              <div className="absolute right-1/3 top-1/3 h-64 w-64 rounded-full bg-neutral-200/50 blur-2xl" />
-              <div className="absolute top-1/2 left-1/2 h-96 w-96 -translate-x-1/2 -translate-y-1/2 rounded-full bg-(--accent-red)/2 blur-3xl" />
-            </div>
-            
-            {/* Diagonal accent stripes */}
-            <div className="pointer-events-none fixed inset-0 opacity-[0.02]">
-              <div className="absolute -right-32 top-0 h-full w-1 rotate-12 bg-linear-to-b from-accent-red to-transparent" />
-              <div className="absolute right-1/4 top-0 h-full w-0.5 rotate-12 bg-linear-to-b from-accent-dark to-transparent" />
-              <div className="absolute left-1/3 top-0 h-full w-1 -rotate-12 bg-linear-to-b from-accent-red to-transparent" />
-              <div className="absolute left-1/2 top-0 h-full w-2 rotate-6 bg-linear-to-b from-neutral-300 to-transparent" />
-            </div>
-            
-            {/* Corner decorative elements */}
-            <div className="pointer-events-none fixed inset-0 opacity-[0.04]">
-              <div className="absolute top-0 left-0 h-64 w-64 border-t-2 border-l-2 border-accent-red rounded-tl-3xl" />
-              <div className="absolute bottom-0 right-0 h-64 w-64 border-b-2 border-r-2 border-accent-red rounded-br-3xl" />
-            </div>
-            
+          <div className="relative min-h-screen flex flex-col bg-neutral-50 text-foreground">
           <Header />
 
           <main className="relative flex-1">
@@ -277,3 +242,4 @@ export default function RootLayout({
     </html>
   );
 }
+

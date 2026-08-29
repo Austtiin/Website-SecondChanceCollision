@@ -30,7 +30,7 @@ const faqs: FAQItem[] = [
   },
   {
     question: "Do I need an appointment for an estimate?",
-    answer: "No appointment needed! Stop by anytime during business hours for a free estimate. Our team will assess your vehicle and provide you with honest, transparent pricing—no surprises.",
+    answer: "No appointment needed! Stop by anytime during business hours for a free estimate. Our team will assess your vehicle and provide you with honest, transparent pricing - no surprises.",
   },
   {
     question: "When can I drop off my vehicle?",

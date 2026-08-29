@@ -1,0 +1,10 @@
+# Azure Storage Emulator (Azurite) local state - should never be committed
+__azurite_db_*__.json
+__azurite_db_*__.json.lock
+__blobstorage__/
+__queuestorage__/
+__tablestorage__/
+
+# OS files
+.DS_Store
+Thumbs.db

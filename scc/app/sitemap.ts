@@ -5,7 +5,7 @@ const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://secondchance-collis
 export const dynamic = "force-static";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const lastSignificantUpdate = new Date("2026-05-26T00:00:00.000Z");
+  const lastSignificantUpdate = new Date("2026-08-28T00:00:00.000Z");
 
   return [
     {
@@ -16,6 +16,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
     {
       url: `${siteUrl}/contact`,
+      lastModified: lastSignificantUpdate,
+      changeFrequency: "monthly",
+      priority: 0.9,
+    },
+    {
+      url: `${siteUrl}/insurance-claims`,
       lastModified: lastSignificantUpdate,
       changeFrequency: "monthly",
       priority: 0.9,

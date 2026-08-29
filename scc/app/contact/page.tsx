@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { useEmailConfirmation } from "../hooks/useEmailConfirmation";
 import EmailConfirmationModal from "../components/EmailConfirmationModal";
@@ -12,27 +13,27 @@ export default function ContactPage() {
       {/* Email Confirmation Modal */}
       <EmailConfirmationModal isOpen={showConfirmation} onClose={closeConfirmation} emailHref={emailHref} />
 
-      {/* Hero banner with black/red theme */}
-      <section className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-[#12171b] via-[#1a2027] to-[#0f1419] p-8 shadow-2xl md:p-12">
-        {/* Decorative shapes */}
-        <div className="pointer-events-none absolute -left-32 -top-32 h-80 w-80 rounded-full bg-[var(--accent-red)]/20 blur-3xl" />
-        <div className="pointer-events-none absolute -bottom-20 -right-20 h-64 w-64 rounded-full bg-[var(--accent-red)]/15 blur-3xl" />
-        <div className="pointer-events-none absolute inset-0 opacity-[0.02]" style={{backgroundImage: 'linear-gradient(#e6141f 1px, transparent 1px), linear-gradient(90deg, #e6141f 1px, transparent 1px)', backgroundSize: '80px 80px'}} />
-        
-        <div className="relative space-y-6">
-          <div className="inline-flex items-center gap-2 rounded-full bg-[var(--accent-red)]/20 px-5 py-2 ring-1 ring-[var(--accent-red)]/30">
-            <div className="h-2 w-2 animate-pulse rounded-full bg-[var(--accent-red)]" />
-            <span className="text-xs font-bold uppercase tracking-wider text-red-300">
-              Get in touch
-            </span>
-          </div>
-          
-          <h1 className="text-4xl font-bold tracking-tight text-white sm:text-5xl lg:text-6xl">
-            Let's Get Your Vehicle Back on the Road
+      {/* Hero banner */}
+      <section className="relative overflow-hidden rounded-2xl shadow-xl">
+        <div className="absolute inset-0">
+          <Image
+            src="/Gallery/1000141922.webp"
+            alt="Vehicle being repaired at Second Chance Collision"
+            fill
+            className="object-cover"
+            priority
+          />
+          <div className="absolute inset-0 bg-linear-to-br from-[#12171b]/90 via-[#12171b]/85 to-[#0f1419]/90" />
+        </div>
+        <div className="relative space-y-4 p-8 md:p-12">
+          <p className="text-xs font-bold uppercase tracking-wider text-red-300">
+            Get in touch
+          </p>
+          <h1 className="text-4xl font-bold tracking-tight text-white sm:text-5xl">
+            Let&apos;s Get Your Vehicle Back on the Road
           </h1>
-          <div className="h-1 w-24 rounded-full bg-gradient-to-r from-[var(--accent-red)] to-red-400" />
           <p className="max-w-3xl text-lg leading-relaxed text-neutral-300">
-            Call, email, or visit us for an estimate. We work with all major insurance companies and provide honest, transparent pricing.
+            Call, email, or visit us for an estimate. We work directly with all major insurance companies and provide honest, transparent pricing.
           </p>
         </div>
       </section>
@@ -40,10 +41,8 @@ export default function ContactPage() {
       {/* Contact Information Cards with decorative theme */}
       <section className="grid gap-6 lg:grid-cols-2">
         {/* Contact Details Card */}
-        <div className="relative overflow-hidden rounded-2xl bg-gradient-to-br from-white to-neutral-50 p-8 shadow-lg ring-1 ring-black/5">
-          <div className="pointer-events-none absolute right-0 top-0 h-32 w-32 -translate-y-8 translate-x-8 rounded-full bg-[var(--accent-red)]/10 blur-2xl" />
-          
-          <div className="relative space-y-6">
+        <div className="rounded-2xl bg-white p-8 shadow-lg ring-1 ring-black/5">
+          <div className="space-y-6">
             <div className="space-y-2">
               <p className="text-xs font-semibold uppercase tracking-wider text-[var(--accent-red)]">
                 Contact Information
@@ -101,11 +100,8 @@ export default function ContactPage() {
         </div>
 
         {/* Process Card with dark theme */}
-        <div className="relative overflow-hidden rounded-2xl bg-gradient-to-br from-[#0a0d10] via-[#12171b] to-[#1a2028] p-8 shadow-2xl ring-1 ring-white/10">
-          <div className="pointer-events-none absolute -left-20 -top-20 h-40 w-40 rounded-full bg-[var(--accent-red)]/20 blur-3xl" />
-          <div className="pointer-events-none absolute -bottom-10 -right-10 h-32 w-32 rounded-full bg-[var(--accent-red)]/10 blur-2xl" />
-          
-          <div className="relative space-y-6">
+        <div className="rounded-2xl bg-[#12171b] p-8 shadow-lg ring-1 ring-white/10">
+          <div className="space-y-6">
             <div className="space-y-2">
               <p className="text-xs font-semibold uppercase tracking-wider text-red-300">
                 What to expect
@@ -133,7 +129,7 @@ export default function ContactPage() {
                 </div>
                 <div className="space-y-1">
                   <p className="font-bold text-white">Get an Estimate</p>
-                  <p className="text-sm text-neutral-400">We'll provide a detailed, honest estimate</p>
+                  <p className="text-sm text-neutral-400">We&apos;ll provide a detailed, honest estimate</p>
                 </div>
               </div>
 
@@ -158,6 +154,30 @@ export default function ContactPage() {
               </div>
             </div>
           </div>
+        </div>
+      </section>
+
+      {/* Photo highlight */}
+      <section className="rounded-2xl bg-white p-6 shadow-lg ring-1 ring-black/5 md:flex md:items-center md:gap-8 md:p-8">
+        <div className="relative mb-4 h-56 w-full overflow-hidden rounded-2xl bg-neutral-900 md:mb-0 md:h-64 md:flex-1">
+          <Image
+            src="/Gallery/1000144912.webp"
+            alt="Freshly refinished vehicle ready for pickup"
+            fill
+            className="object-cover"
+            loading="lazy"
+          />
+        </div>
+        <div className="space-y-3 md:flex-1">
+          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[var(--accent-red)]">
+            Quality you can see
+          </p>
+          <p className="text-sm font-semibold text-[var(--accent-dark)]">
+            Every vehicle leaves looking factory-fresh
+          </p>
+          <p className="text-sm text-neutral-700">
+            From the first estimate to the final walkthrough, we keep you updated and make sure the paint match, panel gaps, and finish meet our standards before you drive away.
+          </p>
         </div>
       </section>
 

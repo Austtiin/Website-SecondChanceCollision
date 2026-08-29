@@ -15,7 +15,7 @@ export default function FooterContent() {
             <div className="flex items-center gap-3 justify-center sm:justify-start">
               <div className="relative h-32 w-64 sm:h-32 sm:w-64 md:h-36 md:w-72 lg:h-40 lg:w-80">
                 <Image
-                  src="/SCC.png"
+                  src="/SCC.webp"
                   alt="Second Chance Collision logo"
                   fill
                   className="object-contain object-center sm:object-left"
@@ -28,6 +28,15 @@ export default function FooterContent() {
             <p className="max-w-xl text-sm leading-relaxed text-neutral-400 text-center sm:text-left">
               Serving Circle Pines, Blaine, Lino Lakes, Coon Rapids, Mounds View, Shoreview, Anoka County, and Ramsey County.
             </p>
+            <Link
+              href="/insurance-claims"
+              className="inline-flex items-center gap-2 rounded-md border border-white/15 bg-white/5 px-3 py-1.5 text-xs font-semibold text-neutral-200 transition hover:border-white/30 hover:text-white"
+            >
+              <svg className="h-4 w-4 text-accent-red" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12.75L11.25 15 15 9.75M12 3l7.5 3v5.25c0 4.5-3 7.5-7.5 9-4.5-1.5-7.5-4.5-7.5-9V6l7.5-3z" />
+              </svg>
+              Insurance-Approved Shop - We Bill Your Insurer Directly
+            </Link>
           </div>
 
           {/* Contact Info */}

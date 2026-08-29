@@ -32,7 +32,7 @@ const faqs: FAQItem[] = [
   },
   {
     question: "Do I need an appointment for an estimate?",
-    answer: "No appointment needed! Stop by anytime during business hours for a free estimate. Our team will assess your vehicle and provide you with honest, transparent pricing—no surprises.",
+    answer: "No appointment needed! Stop by anytime during business hours for a free estimate. Our team will assess your vehicle and provide you with honest, transparent pricing - no surprises.",
   },
   {
     question: "When can I drop off my vehicle?",
@@ -93,11 +93,8 @@ export default function FAQPage() {
           {faqs.map((faq, index) => (
             <div
               key={index}
-              className="relative overflow-hidden rounded-2xl bg-white shadow-lg ring-1 ring-black/5 transition hover:shadow-xl"
+              className="overflow-hidden rounded-2xl bg-white shadow-md ring-1 ring-black/5 transition hover:shadow-lg"
             >
-              {/* Decorative element */}
-              <div className="pointer-events-none absolute -right-8 -top-8 h-24 w-24 rounded-full bg-[var(--accent-red)]/10 blur-2xl" />
-
               <button
                 onClick={() => toggleFAQ(index)}
                 className="relative z-10 w-full px-6 py-5 sm:px-8 flex items-center justify-between text-left transition hover:bg-neutral-50 cursor-pointer"
@@ -163,12 +160,8 @@ export default function FAQPage() {
       </section>
 
       {/* CTA Section */}
-      <section className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-[var(--accent-red)] via-red-600 to-[#c00a17] p-8 shadow-2xl sm:p-12 max-w-4xl mx-auto">
-        <div className="pointer-events-none absolute inset-0" style={{
-          backgroundImage: 'radial-gradient(circle at 30% 20%, rgba(255,255,255,0.1), transparent 50%)',
-        }} />
-
-        <div className="relative z-10 text-center space-y-6">
+      <section className="rounded-2xl bg-[var(--accent-red)] p-8 shadow-xl sm:p-12 max-w-4xl mx-auto">
+        <div className="text-center space-y-6">
           <div className="space-y-3">
             <h3 className="text-2xl sm:text-3xl font-bold text-white">
               Still Have Questions?
@@ -181,7 +174,7 @@ export default function FAQPage() {
           <div className="flex flex-wrap items-center justify-center gap-3 sm:gap-4">
             <a
               href="tel:612-913-6594"
-              className="inline-flex items-center justify-center gap-2 rounded-full bg-white px-6 py-3 sm:px-8 sm:py-4 text-sm sm:text-base font-bold text-[var(--accent-red)] shadow-xl transition hover:bg-neutral-100 hover:scale-105 cursor-pointer"
+              className="inline-flex items-center justify-center gap-2 rounded-full bg-white px-6 py-3 sm:px-8 sm:py-4 text-sm sm:text-base font-bold text-[var(--accent-red)] shadow-md transition hover:bg-neutral-100 cursor-pointer"
             >
               <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
@@ -190,7 +183,7 @@ export default function FAQPage() {
             </a>
             <Link
               href="/contact"
-              className="inline-flex items-center justify-center gap-2 rounded-full border-2 border-white bg-transparent px-6 py-3 sm:px-8 sm:py-4 text-sm sm:text-base font-bold text-white shadow-xl transition hover:bg-white/10 hover:scale-105 cursor-pointer"
+              className="inline-flex items-center justify-center gap-2 rounded-full border-2 border-white bg-transparent px-6 py-3 sm:px-8 sm:py-4 text-sm sm:text-base font-bold text-white shadow-md transition hover:bg-white/10 cursor-pointer"
             >
               <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />

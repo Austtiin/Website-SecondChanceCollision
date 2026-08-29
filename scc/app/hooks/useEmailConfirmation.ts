@@ -23,7 +23,6 @@ export function useEmailConfirmation() {
     const href = e.currentTarget.href;
     setEmailHref(href);
     setShowConfirmation(true);
-    // Don't redirect immediately - let the countdown finish first
   };
 
   const closeConfirmation = () => {
